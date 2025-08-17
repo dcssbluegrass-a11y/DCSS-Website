@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import heroImagePath from "@assets/Copy of _83A3865_1755456309034.jpg";
+import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 
 export default function HeroSection() {
   return (
@@ -16,11 +17,13 @@ export default function HeroSection() {
       
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        {/* Orange text logo placeholder */}
+        {/* Band logo image */}
         <div className="mb-8">
-          <div className="text-dcss-orange font-heading font-bold text-4xl md:text-6xl tracking-wide">
-            DEER CREEK SHARP SHOOTERS
-          </div>
+          <img 
+            src={logoTextPath} 
+            alt="Deer Creek Sharp Shooters" 
+            className="h-16 md:h-24 lg:h-32 mx-auto"
+          />
         </div>
         
         <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">
@@ -31,10 +34,8 @@ export default function HeroSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/shows">
-            <a className="bg-dcss-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200 inline-block">
-              See Our Shows
-            </a>
+          <Link href="/shows" className="bg-dcss-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200 inline-block">
+            See Our Shows
           </Link>
           <button className="border-2 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200">
             Join Mailing List

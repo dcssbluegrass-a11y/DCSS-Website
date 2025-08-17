@@ -12,6 +12,7 @@ export default function Navigation() {
     { name: "About", href: "/about" },
     { name: "Music", href: "/music" },
     { name: "Videos", href: "/videos" },
+    { name: "Merch", href: "/merch" },
     { name: "EPK", href: "/epk" },
     { name: "Contact", href: "/contact" },
   ];
