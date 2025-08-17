@@ -21,11 +21,11 @@ export default function HeroSection() {
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            className="h-48 md:h-64 lg:h-80 xl:h-96 2xl:h-[28rem] mx-auto max-w-full pt-[-5px] pb-[-5px]"
+            className="h-32 md:h-40 lg:h-48 xl:h-56 mx-auto max-w-full"
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental Bluegrass from Colorado</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental Bluegrass from Colorado</h1>
         <p className="text-xl md:text-2xl mb-8 text-dcss-light font-light">
           Fast tunes, big crowds, bigger smiles.
         </p>
