@@ -1,0 +1,161 @@
+{
+  "site": {
+    "name": "Deer Creek Sharp Shooters",
+    "tagline": "High-energy Colorado bluegrass with a sharp edge.",
+    "domain": "tbd",
+    "contact": {
+      "email": "DCSSbluegrass@gmail.com",
+      "phone": "443-417-7287",
+      "hq": "Colorado, USA",
+      "booking_email": "tbd",
+      "booking_phone": "tbd"
+    },
+    "social": {
+      "instagram": "https://www.instagram.com/deercreeksharpshooters",
+      "facebook": "https://www.facebook.com/deercreeksharpshooters",
+      "youtube": "https://www.youtube.com/@deercreeksharpshooters",
+      "spotify": "https://open.spotify.com/search/Deer%20Creek%20Sharp%20Shooters"
+    }
+  },
+
+  "branding": {
+    "colors": {
+      "primary": "#1C1C1C",
+      "secondary": "#FC8448",
+      "neutralLight": "#F9F9F9",
+      "neutralWarm": "#F5F0E6",
+      "accent": "#1E392A"
+    },
+    "fonts": {
+      "heading": ["Oswald", "Montserrat", "sans-serif"],
+      "body": ["Merriweather", "Georgia", "serif"]
+    },
+    "logos": [
+      { "path": "assets/logo/text_orange.png", "sourceFile": "Copy of 8.png", "use": ["nav_alt", "merch"] },
+      { "path": "assets/logo/skull_white_outline.png", "sourceFile": "Logo 1 w White Outline.png", "use": ["header", "dark_bg"] },
+      { "path": "assets/logo/patch_1.png", "sourceFile": "Patch 1.png", "use": ["footer", "epk"] },
+      { "path": "assets/logo/patch_2.png", "sourceFile": "Patch 2.png", "use": ["footer", "epk"] },
+      { "path": "assets/logo/patch_5.png", "sourceFile": "Patch 5.png", "use": ["footer", "epk"] },
+      { "path": "assets/logo/patch_6.png", "sourceFile": "Patch 6.png", "use": ["footer", "epk"] },
+      { "path": "assets/logo/band_patch_2.png", "sourceFile": "Band Patch 2.png", "use": ["epk"] }
+    ]
+  },
+
+  "assets": {
+    "photos": [
+      { "key": "hero_live_1", "sourceFile": "Copy of _83A3865.jpg", "alt": "DCSS live on stage with full band" },
+      { "key": "hero_live_2", "sourceFile": "Strings.jpg", "alt": "Wide shot of DCSS performing to full audience" },
+      { "key": "promo_backstage", "sourceFile": "JMP_3850.jpg", "alt": "Backstage promo shot" },
+      { "key": "promo_personality", "sourceFile": "DSC02921.JPG", "alt": "Band personality shot" },
+      { "key": "promo_group", "sourceFile": "44313_53ceb0....jpg", "alt": "Group photo with logo overlay" },
+      { "key": "promo_candid", "sourceFile": "sdf-21.jpg", "alt": "Green room group photo" }
+    ],
+    "videos_local_to_upload": [
+      "DCSS - WWG Reel.mp4",
+      "big d warm up.mp4",
+      "Oklahoma PoHo.MOV",
+      "Raleigh and Spencer.mp4",
+      "IMG_3656.mov",
+      "IMG_6845.mov",
+      "IMG_6850.mov",
+      "IMG_6851.mov"
+    ],
+    "youtube_playlist_id": "tbd" 
+  },
+
+  "navigation": [
+    { "label": "Home", "route": "/" },
+    { "label": "Shows", "route": "/shows" },
+    { "label": "About + Press", "route": "/about" },
+    { "label": "Videos", "route": "/videos" },
+    { "label": "Booking", "route": "/booking" },
+    { "label": "EPK", "route": "/epk" },
+    { "label": "Merch", "route": "/merch", "external": "tbd" },
+    { "label": "Contact", "route": "/contact" }
+  ],
+
+  "pages": {
+    "/": {
+      "hero": {
+        "imageKey": "hero_live_1",
+        "headline": "Sharp-picking bluegrass from Colorado",
+        "subhead": "Fast tunes, big crowds, bigger smiles.",
+        "ctas": [
+          { "label": "See Our Shows", "href": "/shows", "style": "primary" },
+          { "label": "Join the Mailing List", "href": "#subscribe", "style": "secondary" }
+        ]
+      },
+      "highlights": [
+        {
+          "title": "As seen at WinterWonderGrass",
+          "body": "Festival-tested, dance-floor approved.",
+          "media": { "type": "image", "imageKey": "hero_live_2" }
+        },
+        {
+          "title": "Watch the Reel",
+          "body": "Get a feel for the live show energy.",
+          "media": { "type": "video_embed", "provider": "youtube", "videoId": "tbd_reel" }
+        }
+      ],
+      "subscribe": { "provider": "tbd", "listId": "tbd" }
+    },
+
+    "/shows": {
+      "heading": "Shows",
+      "upcoming": { "source": "bandsintown", "artistId": "tbd" },
+      "pastArchive": { "groupBy": "state", "dataSource": "manual_or_csv" },
+      "headerImageKey": "hero_live_2"
+    },
+
+    "/about": {
+      "heading": "About + Press",
+      "bioShort": "Deer Creek Sharp Shooters (DCSS) blend blistering bluegrass chops with playful, genre-bending energy.",
+      "bioLong": "tbd_300_to_500_words",
+      "pressQuotes": [
+        { "quote": "\"Best New Bluegrass Band\"", "source": "Denver Westword (2022)", "href": "https://www.westword.com" }
+      ],
+      "photos": ["promo_group", "promo_candid", "promo_personality"]
+    },
+
+    "/videos": {
+      "heading": "Videos",
+      "feature": { "type": "youtube", "videoId": "tbd_reel" },
+      "playlist": { "type": "youtube_playlist", "playlistId": "tbd" }
+    },
+
+    "/booking": {
+      "heading": "Booking",
+      "blurb": "For festivals, venues, and private events.",
+      "contacts": [
+        { "role": "Booking", "name": "tbd", "email": "tbd", "phone": "tbd" }
+      ],
+      "downloads": [
+        { "label": "Stage Plot (PDF)", "path": "assets/docs/stage-plot.pdf" },
+        { "label": "Tech Rider (PDF)", "path": "assets/docs/tech-rider.pdf" }
+      ]
+    },
+
+    "/epk": {
+      "heading": "Electronic Press Kit",
+      "assets": {
+        "logos": ["skull_white_outline.png", "patch_1.png", "patch_2.png", "text_orange.png"],
+        "photos": ["hero_live_1", "hero_live_2", "promo_group", "promo_personality", "promo_candid"],
+        "videoFeature": { "type": "youtube", "videoId": "tbd_reel" },
+        "musicEmbeds": [
+          { "service": "spotify", "href": "tbd_album_or_playlist" },
+          { "service": "appleMusic", "href": "tbd" }
+        ],
+        "downloadables": [
+          { "label": "One-Sheet (PDF)", "path": "assets/docs/one-sheet.pdf" }
+        ]
+      }
+    },
+
+    "/contact": {
+      "heading": "Contact",
+      "email": "DCSSbluegrass@gmail.com",
+      "phone": "443-417-7287",
+      "form": { "provider": "tbd" }
+    }
+  }
+}
