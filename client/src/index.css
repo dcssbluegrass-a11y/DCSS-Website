@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 97.8%);
+  --background: hsl(0, 0%, 98%); /* Off-White */
   --foreground: hsl(0, 0%, 11%);
   --card: hsl(0, 0%, 100%);
   --card-foreground: hsl(0, 0%, 11%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(0, 0%, 11%);
-  --primary: hsl(20, 94%, 63%);
+  --primary: hsl(20, 95%, 64%); /* Updated Orange */
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 11%);
+  --secondary: hsl(168, 46%, 15%); /* Forest Green */
   --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(44, 13%, 95%);
+  --muted: hsl(45, 76%, 93%); /* Warm Cream */
   --muted-foreground: hsl(0, 0%, 45%);
-  --accent: hsl(142, 31%, 22%);
+  --accent: hsl(161, 36%, 18%); /* Dark Green */
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
@@ -26,12 +26,12 @@
   --ring: hsl(20, 94%, 63%);
   --radius: 0.5rem;
 
-  /* DCSS Brand Colors */
-  --dcss-dark: hsl(0, 0%, 11%);
-  --dcss-orange: hsl(20, 94%, 63%);
-  --dcss-light: hsl(0, 0%, 97.8%);
-  --dcss-warm: hsl(44, 13%, 95%);
-  --dcss-accent: hsl(142, 31%, 22%);
+  /* DCSS Brand Colors - Forest Green Theme */
+  --dcss-dark: hsl(168, 46%, 15%); /* Forest Green #264653 */
+  --dcss-orange: hsl(20, 95%, 64%); /* Orange #FC8448 */
+  --dcss-light: hsl(45, 76%, 93%); /* Warm Cream #F5F0E6 */
+  --dcss-warm: hsl(0, 0%, 98%); /* Off-White #F9F9F9 */
+  --dcss-accent: hsl(161, 36%, 18%); /* Dark Green #1E392A */
 
   /* Typography */
   --font-heading: 'Oswald', 'Montserrat', sans-serif;
@@ -39,25 +39,25 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 11%);
-  --foreground: hsl(0, 0%, 97.8%);
-  --card: hsl(0, 0%, 16%);
-  --card-foreground: hsl(0, 0%, 97.8%);
-  --popover: hsl(0, 0%, 11%);
-  --popover-foreground: hsl(0, 0%, 97.8%);
-  --primary: hsl(20, 94%, 63%);
+  --background: hsl(161, 36%, 18%); /* Dark Green */
+  --foreground: hsl(45, 76%, 93%); /* Warm Cream */
+  --card: hsl(168, 46%, 15%); /* Forest Green */
+  --card-foreground: hsl(45, 76%, 93%);
+  --popover: hsl(161, 36%, 18%);
+  --popover-foreground: hsl(45, 76%, 93%);
+  --primary: hsl(20, 95%, 64%); /* Orange */
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 97.8%);
-  --secondary-foreground: hsl(0, 0%, 11%);
-  --muted: hsl(0, 0%, 16%);
-  --muted-foreground: hsl(0, 0%, 65%);
-  --accent: hsl(142, 31%, 22%);
+  --secondary: hsl(45, 76%, 93%); /* Warm Cream */
+  --secondary-foreground: hsl(161, 36%, 18%);
+  --muted: hsl(168, 46%, 20%);
+  --muted-foreground: hsl(45, 76%, 85%);
+  --accent: hsl(20, 95%, 64%); /* Orange */
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 20%);
-  --input: hsl(0, 0%, 16%);
-  --ring: hsl(20, 94%, 63%);
+  --border: hsl(168, 46%, 25%);
+  --input: hsl(168, 46%, 20%);
+  --ring: hsl(20, 95%, 64%);
 }
 
 @layer base {
