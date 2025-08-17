@@ -25,7 +25,7 @@ export default function HeroSection() {
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Sharp-picking bluegrass from Colorado</h1>
+        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental Bluegrass from Colorado</h1>
         <p className="text-xl md:text-2xl mb-8 text-dcss-light font-light">
           Fast tunes, big crowds, bigger smiles.
         </p>
