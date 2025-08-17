@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Merriweather:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 97.8%);
+  --foreground: hsl(0, 0%, 11%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 11%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 11%);
+  --primary: hsl(20, 94%, 63%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 11%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(44, 13%, 95%);
+  --muted-foreground: hsl(0, 0%, 45%);
+  --accent: hsl(142, 31%, 22%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 90%);
+  --input: hsl(0, 0%, 95%);
+  --ring: hsl(20, 94%, 63%);
+  --radius: 0.5rem;
+
+  /* DCSS Brand Colors */
+  --dcss-dark: hsl(0, 0%, 11%);
+  --dcss-orange: hsl(20, 94%, 63%);
+  --dcss-light: hsl(0, 0%, 97.8%);
+  --dcss-warm: hsl(44, 13%, 95%);
+  --dcss-accent: hsl(142, 31%, 22%);
+
+  /* Typography */
+  --font-heading: 'Oswald', 'Montserrat', sans-serif;
+  --font-body: 'Merriweather', 'Georgia', serif;
+}
+
+.dark {
+  --background: hsl(0, 0%, 11%);
+  --foreground: hsl(0, 0%, 97.8%);
+  --card: hsl(0, 0%, 16%);
+  --card-foreground: hsl(0, 0%, 97.8%);
+  --popover: hsl(0, 0%, 11%);
+  --popover-foreground: hsl(0, 0%, 97.8%);
+  --primary: hsl(20, 94%, 63%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 97.8%);
+  --secondary-foreground: hsl(0, 0%, 11%);
+  --muted: hsl(0, 0%, 16%);
+  --muted-foreground: hsl(0, 0%, 65%);
+  --accent: hsl(142, 31%, 22%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(0, 0%, 20%);
+  --input: hsl(0, 0%, 16%);
+  --ring: hsl(20, 94%, 63%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-dcss-dark { color: var(--dcss-dark); }
+  .text-dcss-orange { color: var(--dcss-orange); }
+  .text-dcss-light { color: var(--dcss-light); }
+  .text-dcss-warm { color: var(--dcss-warm); }
+  .text-dcss-accent { color: var(--dcss-accent); }
+  
+  .bg-dcss-dark { background-color: var(--dcss-dark); }
+  .bg-dcss-orange { background-color: var(--dcss-orange); }
+  .bg-dcss-light { background-color: var(--dcss-light); }
+  .bg-dcss-warm { background-color: var(--dcss-warm); }
+  .bg-dcss-accent { background-color: var(--dcss-accent); }
+  
+  .border-dcss-orange { border-color: var(--dcss-orange); }
+  .border-dcss-accent { border-color: var(--dcss-accent); }
+  
+  .font-heading { font-family: var(--font-heading); }
+  .font-body { font-family: var(--font-body); }
+}
