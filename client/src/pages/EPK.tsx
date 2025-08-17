@@ -100,10 +100,14 @@ export default function EPK() {
                   <i className="fas fa-file-pdf text-dcss-orange"></i>
                   <span className="text-sm">Stage Plot & Input List</span>
                 </a>
-                <div className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg">
+                <a 
+                  href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
+                  target="_blank"
+                  className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg hover:bg-dcss-warm transition-colors"
+                >
                   <i className="fas fa-file-pdf text-dcss-orange"></i>
-                  <span className="text-sm">Tech Rider</span>
-                </div>
+                  <span className="text-sm">Technical Rider</span>
+                </a>
               </div>
               <Button 
                 onClick={() => handleDownload('documents')}
@@ -114,101 +118,7 @@ export default function EPK() {
             </div>
           </div>
 
-          {/* Technical Rider & Stage Plot */}
-          <div className="mt-12 bg-dcss-warm p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-heading font-bold text-dcss-dark mb-6 text-center">
-              Technical Rider & Stage Plot
-            </h3>
-            
-            {/* Stage Layout */}
-            <div className="mb-8 bg-dcss-light p-6 rounded-lg">
-              <h4 className="font-heading font-semibold text-dcss-dark mb-4 text-center">Stage Layout</h4>
-              <div className="text-xs font-mono bg-dcss-dark text-dcss-light p-6 rounded overflow-x-auto">
-                <pre className="text-center whitespace-pre">{`
-                      Band IEM Console
-                     Rack w FOH Fanout 5'
-                       (Need 16 channel
-                      sub-snake to FOH)                          Band
-                                                                  TB
 
-
-                                              Bass
-                                              (Dan)
-
-
-
-                                                           Guitar
-                   Dobro           Mandolin                (Alex)                     Fiddle
-                   (Fritz)          (Luke)                                            (Kay)
-                                                                           Banjo
-                                                                         (Harrison)
-                `}</pre>
-              </div>
-            </div>
-
-            {/* Input List */}
-            <div className="mb-8">
-              <h4 className="font-heading font-semibold text-dcss-dark mb-4 text-center">Input List (16 Channels)</h4>
-              <div className="grid md:grid-cols-2 gap-6 text-sm">
-                <div className="bg-dcss-light p-4 rounded-lg">
-                  <ul className="text-dcss-dark space-y-2">
-                    <li><strong>1.</strong> Dobro DI</li>
-                    <li><strong>2.</strong> Mandolin DI</li>
-                    <li><strong>3.</strong> Bass DI (Dan)</li>
-                    <li><strong>4.</strong> Guitar DI</li>
-                    <li><strong>5.</strong> Banjo DI</li>
-                    <li><strong>6.</strong> Fiddle DI</li>
-                    <li><strong>7.</strong> Dobro Vox (Fritz)</li>
-                    <li><strong>8.</strong> Mandolin Vox (Luke)</li>
-                  </ul>
-                </div>
-                <div className="bg-dcss-light p-4 rounded-lg">
-                  <ul className="text-dcss-dark space-y-2">
-                    <li><strong>9.</strong> Guitar Vox (Alex)</li>
-                    <li><strong>10.</strong> Banjo Vox (Harrison)</li>
-                    <li><strong>11.</strong> Fiddle Vox (Kay)</li>
-                    <li><strong>12.</strong> Guest DI 1</li>
-                    <li><strong>13.</strong> Guest DI 2</li>
-                    <li><strong>14.</strong> Band Talkback</li>
-                    <li><strong>15.</strong> Ambient SR</li>
-                    <li><strong>16.</strong> Ambient SL</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Requirements */}
-            <div className="grid md:grid-cols-2 gap-8 mb-6">
-              <div className="bg-dcss-light p-6 rounded-lg">
-                <h4 className="font-heading font-semibold text-dcss-dark mb-3 text-center">Venue Provides:</h4>
-                <ul className="text-dcss-dark space-y-2 text-sm">
-                  <li>• 6 Tall Microphone Stands</li>
-                  <li>• 2 Short Microphone Stands</li>
-                  <li>• Power as indicated</li>
-                  <li>• 16-channel mixing console capability</li>
-                  <li>• Sub-snake connection to FOH</li>
-                </ul>
-              </div>
-              
-              <div className="bg-dcss-light p-6 rounded-lg">
-                <h4 className="font-heading font-semibold text-dcss-dark mb-3 text-center">Band Provides:</h4>
-                <ul className="text-dcss-dark space-y-2 text-sm">
-                  <li>• DIs and Microphones</li>
-                  <li>• IEM Console/Rack</li>
-                  <li>• Stage Sub Snakes</li>
-                  <li>• Backline Amplification</li>
-                  <li>• All instruments and cables</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="text-center p-4 bg-dcss-orange bg-opacity-20 rounded-lg">
-              <p className="text-dcss-dark">
-                <strong>Technical Contact:</strong> Luke Hinder - 
-                <a href="tel:443-417-3039" className="text-dcss-orange hover:underline ml-1 font-semibold">443-417-3039</a>
-              </p>
-            </div>
-          </div>
 
           {/* Music and Social Links */}
           <div className="mt-12 text-center">

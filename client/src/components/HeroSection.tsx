@@ -21,7 +21,7 @@ export default function HeroSection() {
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            className="h-32 md:h-40 lg:h-48 xl:h-56 mx-auto max-w-full"
+            className="h-40 md:h-52 lg:h-64 xl:h-72 2xl:h-80 mx-auto max-w-full"
           />
         </div>
         
