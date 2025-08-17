@@ -16,12 +16,12 @@ export default function HeroSection() {
       </div>
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        {/* Band logo image */}
+        {/* Band logo image - Enlarged to dominate */}
         <div className="mb-8">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            className="h-20 md:h-32 lg:h-40 mx-auto"
+            className="h-32 md:h-48 lg:h-64 xl:h-80 mx-auto"
           />
         </div>
         
