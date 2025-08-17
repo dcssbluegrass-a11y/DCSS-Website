@@ -14,7 +14,6 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-dcss-dark bg-opacity-60"></div>
       </div>
-      
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         {/* Band logo image */}
@@ -26,9 +25,7 @@ export default function HeroSection() {
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">
-          Sharp-picking bluegrass from Colorado
-        </h1>
+        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental bluegrass from Colorado</h1>
         <p className="text-xl md:text-2xl mb-8 text-dcss-light font-light">
           Fast tunes, big crowds, bigger smiles.
         </p>
