@@ -21,18 +21,20 @@ export default function HeroSection() {
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            className="h-16 md:h-24 lg:h-32 mx-auto"
+            className="h-20 md:h-32 lg:h-40 mx-auto"
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental bluegrass from Colorado</h1>
+        <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 text-dcss-orange">Sharp-picking bluegrass from Colorado</h1>
         <p className="text-xl md:text-2xl mb-8 text-dcss-light font-light">
           Fast tunes, big crowds, bigger smiles.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/shows" className="bg-dcss-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200 inline-block">
-            See Our Shows
+          <Link href="/shows">
+            <span className="bg-dcss-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200 inline-block cursor-pointer">
+              See Our Shows
+            </span>
           </Link>
           <button className="border-2 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-white px-8 py-3 rounded-lg font-heading font-semibold transition-colors duration-200">
             Join Mailing List

@@ -1,36 +1,39 @@
-import { Button } from "@/components/ui/button";
-import logoPath from "@assets/Copy of 8_1755456309035.png";
+import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 
 export default function Merch() {
   const merchItems = [
     {
-      name: "DCSS T-Shirt",
+      id: 1,
+      name: "DCSS Logo T-Shirt",
       price: "$25",
-      image: logoPath,
-      description: "Official band t-shirt with orange logo design"
+      image: logoTextPath,
+      description: "High-quality cotton tee with our signature orange logo"
     },
     {
-      name: "DCSS Patch",
-      price: "$10",
-      image: logoPath, 
-      description: "Embroidered patch perfect for jackets and bags"
-    },
-    {
-      name: "DCSS Sticker Pack",
-      price: "$5",
-      image: logoPath,
-      description: "Pack of 5 vinyl stickers featuring band logo"
-    },
-    {
+      id: 2, 
       name: "Crik Album CD",
       price: "$15",
-      image: logoPath,
-      description: "Physical copy of our debut album 'Crik'"
+      image: logoTextPath,
+      description: "Physical copy of our debut album with liner notes"
+    },
+    {
+      id: 3,
+      name: "DCSS Trucker Hat",
+      price: "$20",
+      image: logoTextPath,
+      description: "Mesh back trucker hat with embroidered skull logo"
+    },
+    {
+      id: 4,
+      name: "Bluegrass Picks Set",
+      price: "$10",
+      image: logoTextPath,
+      description: "Set of 5 custom guitar picks with band logo"
     }
   ];
 
   return (
-    <div className="pt-16 min-h-screen bg-dcss-warm">
+    <div className="pt-16 min-h-screen bg-dcss-light">
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -38,64 +41,55 @@ export default function Merch() {
               Merch
             </h1>
             <p className="text-xl text-dcss-dark">
-              Show your support with official DCSS merchandise
+              Support the band with official merchandise
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {merchItems.map((item, index) => (
-              <div key={index} className="bg-dcss-light rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <div className="h-48 bg-dcss-dark flex items-center justify-center p-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {merchItems.map((item) => (
+              <div key={item.id} className="bg-dcss-warm p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <div className="bg-dcss-dark p-4 rounded-lg mb-4">
                   <img 
                     src={item.image} 
                     alt={item.name} 
-                    className="h-full w-auto object-contain"
+                    className="w-full h-32 object-contain"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-heading font-bold text-dcss-dark text-lg mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-dcss-dark text-sm mb-4 opacity-75">
-                    {item.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-dcss-orange font-heading font-bold text-xl">
-                      {item.price}
-                    </span>
-                    <Button className="bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold">
-                      Coming Soon
-                    </Button>
-                  </div>
+                
+                <h3 className="text-xl font-heading font-bold text-dcss-dark mb-2">
+                  {item.name}
+                </h3>
+                <p className="text-dcss-dark opacity-75 mb-4 text-sm">
+                  {item.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-heading font-bold text-dcss-orange">
+                    {item.price}
+                  </span>
+                  <button className="bg-dcss-orange hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-heading font-semibold transition-colors duration-200">
+                    Buy Now
+                  </button>
                 </div>
               </div>
             ))}
           </div>
           
-          {/* Newsletter Signup for Merch Updates */}
-          <div className="mt-16 bg-dcss-dark text-dcss-light p-8 rounded-xl text-center">
-            <h3 className="text-2xl font-heading font-bold mb-4">
-              Get Notified About New Merch
-            </h3>
-            <p className="mb-6">
-              Sign up for our mailing list to be the first to know when merchandise becomes available!
-            </p>
-            <Button className="bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold px-8 py-3">
-              Join Mailing List
-            </Button>
-          </div>
-          
-          {/* Contact for Bulk Orders */}
-          <div className="mt-8 text-center">
-            <p className="text-dcss-dark">
-              Interested in bulk orders or custom merchandise? 
+          <div className="text-center mt-12">
+            <div className="bg-dcss-dark text-dcss-light p-6 rounded-xl inline-block">
+              <h3 className="text-xl font-heading font-bold mb-4">
+                Coming Soon: Online Store
+              </h3>
+              <p className="mb-4">
+                We're working on setting up our online merchandise store. In the meantime, you can purchase items at our shows or contact us directly.
+              </p>
               <a 
-                href="mailto:DCSSbluegrass@gmail.com" 
-                className="text-dcss-orange hover:text-orange-600 font-semibold ml-1"
+                href="mailto:DCSSbluegrass@gmail.com?subject=Merchandise%20Inquiry" 
+                className="inline-flex items-center space-x-2 bg-dcss-orange hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-heading font-semibold transition-colors duration-200"
               >
-                Contact us directly
+                <i className="fas fa-envelope"></i>
+                <span>Contact About Merch</span>
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </section>
