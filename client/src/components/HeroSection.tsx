@@ -21,12 +21,18 @@ export default function HeroSection() {
       
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Band logo with dramatic shadow */}
+        {/* Band logo with dramatic shadow - cropped tighter */}
         <div className="mb-8">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
+            style={{ 
+              height: '180px', 
+              width: '100%', 
+              maxWidth: '800px',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
             className="mx-auto block drop-shadow-2xl filter brightness-110"
           />
         </div>
