@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import heroImagePath from "@assets/Copy of _83A3865_1755484099848.jpg";
+import heroImagePath from "@assets/Copy of sdf-21_1755486190033.jpg";
 import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 
 export default function HeroSection() {
@@ -8,20 +8,20 @@ export default function HeroSection() {
       className="relative min-h-screen overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`,
-        backgroundSize: 'contain',
-        backgroundPosition: 'center bottom',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
       {/* Hero content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-4">
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-12">
         {/* Band logo image - Maximum size to dominate */}
         <div className="mb-4">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            style={{ height: 'auto', width: '100%', maxWidth: '600px' }}
+            style={{ height: 'auto', width: '100%', maxWidth: '700px' }}
             className="mx-auto block"
           />
         </div>
