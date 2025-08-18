@@ -22,7 +22,7 @@ export default function HeroSection() {
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
             style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
-            className="mx-auto block ml-[14px] mr-[14px] pl-[3px] pr-[3px] pt-[0px] pb-[0px] mt-[-193px] mb-[-193px]"
+            className="mx-auto block pl-[3px] pr-[3px] pt-[0px] pb-[0px] mt-[-151px] mb-[-151px] ml-[0px] mr-[0px]"
           />
         </div>
         
