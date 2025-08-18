@@ -1,10 +1,10 @@
 import { Link } from "wouter";
-import heroImagePath from "@assets/Copy of _83A3865_1755484099848.jpg";
+import heroImagePath from "@assets/Copy of _83A3865_1755456309034.jpg";
 import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8">
       {/* Live performance background image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         {/* Band logo image - Maximum size to dominate */}
-        <div className="mb-8">
+        <div className="mb-4">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
@@ -26,7 +26,7 @@ export default function HeroSection() {
           />
         </div>
         
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 text-dcss-orange">Hard-driving, Experimental Bluegrass from Colorado</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-dcss-orange">Hard-driving, Experimental Bluegrass from Colorado</h1>
         <p className="text-xl md:text-2xl mb-8 text-dcss-light font-light">
           Fast tunes, big crowds, bigger smiles.
         </p>
