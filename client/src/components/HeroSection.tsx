@@ -7,7 +7,10 @@ export default function HeroSection() {
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden py-8"
       style={{
-        backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`
+        backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
