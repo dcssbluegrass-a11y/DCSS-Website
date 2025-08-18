@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Live performance background image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={heroImagePath} 
+          src="/attached_assets/Copy of _83A3865_1755484099848.jpg" 
           alt="DCSS live on stage with full band" 
           className="w-full h-full object-cover"
         />
