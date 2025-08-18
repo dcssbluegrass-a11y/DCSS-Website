@@ -4,16 +4,13 @@ import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8">
-      {/* Live performance background image */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/attached_assets/Copy of _83A3865_1755484099848.jpg" 
-          alt="DCSS live on stage with full band" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-dcss-dark bg-opacity-60"></div>
-      </div>
+    <section 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-8"
+      style={{
+        backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         {/* Band logo image - Maximum size to dominate */}
