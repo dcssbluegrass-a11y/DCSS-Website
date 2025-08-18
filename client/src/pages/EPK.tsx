@@ -1,13 +1,37 @@
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/Copy of Patch 5_1755456309036.png";
-import livePhotoPath from "@assets/Copy of _83A3865_1755456309034.jpg";
-import festivalPhotoPath from "@assets/Strings_1755456309036.jpg";
-import groupPhotoPath from "@assets/Copy of sdf-21_1755456309036.jpg";
+import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
+import logoWhitePath from "@assets/Copy of Logo 1 w White Outline_1755456309035.png";
+import photo1 from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
+import photo2 from "@assets/Copy of _83A3865_1755456309034.jpg";
+import photo3 from "@assets/Copy of DSC02921_1755456309035.JPG";
+import photo4 from "@assets/Copy of JMP_3850_1755456309035.jpg";
+import photo5 from "@assets/Copy of sdf-21_1755486190033.jpg";
+import photo6 from "@assets/Strings_1755487567666.jpg";
 
 export default function EPK() {
-  const handleDownload = (type: string) => {
-    // Implement download functionality
-    console.log(`Downloading ${type}`);
+  const handleDownloadPhotos = () => {
+    const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
+    photos.forEach((photo, index) => {
+      const link = document.createElement('a');
+      link.href = photo;
+      link.download = `DCSS_Photo_${index + 1}.jpg`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  };
+
+  const handleDownloadLogos = () => {
+    const logos = [logoPath, logoTextPath, logoWhitePath];
+    logos.forEach((logo, index) => {
+      const link = document.createElement('a');
+      link.href = logo;
+      link.download = `DCSS_Logo_${index + 1}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
   };
 
   return (
@@ -30,57 +54,67 @@ export default function EPK() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-dcss-dark p-4 rounded-lg">
                   <img 
-                    src={logoPath} 
+                    src={logoWhitePath} 
                     alt="DCSS Logo White" 
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="bg-dcss-light p-4 rounded-lg border">
                   <img 
-                    src={logoPath} 
-                    alt="DCSS Patch" 
+                    src={logoTextPath} 
+                    alt="DCSS Wood Text Logo" 
                     className="w-full h-auto"
                   />
                 </div>
               </div>
               <Button 
-                onClick={() => handleDownload('logos')}
+                onClick={handleDownloadLogos}
                 className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
               >
-                Download Logos
+                Download All Logos
               </Button>
             </div>
             
             {/* Photos Section */}
             <div className="bg-dcss-warm p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-heading font-bold text-dcss-dark mb-4">Photos</h3>
-              <div className="grid grid-cols-2 gap-2 mb-4">
+              <div className="grid grid-cols-3 gap-2 mb-4">
                 <img 
-                  src={livePhotoPath} 
-                  alt="Live Photo" 
+                  src={photo1} 
+                  alt="Band Performance" 
                   className="w-full h-16 object-cover rounded"
                 />
                 <img 
-                  src={festivalPhotoPath} 
-                  alt="Festival Photo" 
+                  src={photo2} 
+                  alt="Live Performance" 
                   className="w-full h-16 object-cover rounded"
                 />
                 <img 
-                  src={groupPhotoPath} 
-                  alt="Group Photo" 
+                  src={photo3} 
+                  alt="Band Photo" 
                   className="w-full h-16 object-cover rounded"
                 />
                 <img 
-                  src={groupPhotoPath} 
-                  alt="Candid Photo" 
+                  src={photo4} 
+                  alt="Stage Performance" 
+                  className="w-full h-16 object-cover rounded"
+                />
+                <img 
+                  src={photo5} 
+                  alt="Concert Photo" 
+                  className="w-full h-16 object-cover rounded"
+                />
+                <img 
+                  src={photo6} 
+                  alt="Festival Performance" 
                   className="w-full h-16 object-cover rounded"
                 />
               </div>
               <Button 
-                onClick={() => handleDownload('photos')}
+                onClick={handleDownloadPhotos}
                 className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
               >
-                Download Photos
+                Download All Photos
               </Button>
             </div>
             
@@ -88,33 +122,23 @@ export default function EPK() {
             <div className="bg-dcss-warm p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-heading font-bold text-dcss-dark mb-4">Documents</h3>
               <div className="space-y-3 mb-4">
-                <div className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg">
-                  <i className="fas fa-file-pdf text-dcss-orange"></i>
-                  <span className="text-sm">One-Sheet</span>
-                </div>
                 <a 
                   href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
-                  target="_blank"
-                  className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg hover:bg-dcss-warm transition-colors"
+                  download="DCSS_Stage_Plot_Input_List.pdf"
+                  className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg hover:bg-dcss-warm transition-colors cursor-pointer"
                 >
                   <i className="fas fa-file-pdf text-dcss-orange"></i>
                   <span className="text-sm">Stage Plot & Input List</span>
-                </a>
-                <a 
-                  href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
-                  target="_blank"
-                  className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg hover:bg-dcss-warm transition-colors"
-                >
-                  <i className="fas fa-file-pdf text-dcss-orange"></i>
-                  <span className="text-sm">Technical Rider</span>
+                  <i className="fas fa-download text-dcss-orange ml-auto"></i>
                 </a>
               </div>
-              <Button 
-                onClick={() => handleDownload('documents')}
-                className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
+              <a 
+                href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
+                download="DCSS_Stage_Plot_Input_List.pdf"
+                className="block w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold py-2 px-4 rounded text-center transition-colors"
               >
-                Download All Docs
-              </Button>
+                Download Document
+              </a>
             </div>
           </div>
 
