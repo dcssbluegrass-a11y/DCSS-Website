@@ -5,7 +5,7 @@ import logoTextPath from "@assets/Copy of 8_1755456309035.png";
 export default function HeroSection() {
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-8"
+      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-16 pb-8"
       style={{
         backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`,
         backgroundSize: 'cover',
@@ -15,7 +15,7 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
       {/* Hero content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-8">
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-16">
         {/* Band logo image - Maximum size to dominate */}
         <div className="mb-4">
           <img 
