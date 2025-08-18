@@ -8,20 +8,20 @@ export default function HeroSection() {
       className="relative min-h-screen overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(38, 70, 83, 0.6), rgba(38, 70, 83, 0.6)), url(${heroImagePath})`,
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
         backgroundPosition: 'center bottom',
         backgroundRepeat: 'no-repeat'
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
       {/* Hero content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-20">
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto pt-4">
         {/* Band logo image - Maximum size to dominate */}
         <div className="mb-4">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
+            style={{ height: 'auto', width: '100%', maxWidth: '600px' }}
             className="mx-auto block"
           />
         </div>
