@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import heroImagePath from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755486974983.jpg";
-import logoTextPath from "@assets/Copy of 8_1755456309035.png";
+import logoTextPath from "@assets/Patches - 8 - Edited_1755487296226.png";
 
 export default function HeroSection() {
   return (
@@ -21,18 +21,12 @@ export default function HeroSection() {
       
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Band logo with dramatic shadow - cropped tighter */}
+        {/* Band logo with dramatic shadow */}
         <div className="mb-8">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
-            style={{ 
-              height: '180px', 
-              width: '100%', 
-              maxWidth: '800px',
-              objectFit: 'cover',
-              objectPosition: 'center'
-            }}
+            style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
             className="mx-auto block drop-shadow-2xl filter brightness-110"
           />
         </div>
