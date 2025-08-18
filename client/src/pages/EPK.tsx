@@ -4,7 +4,7 @@ import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
 import logoWhitePath from "@assets/Copy of Logo 1 w White Outline_1755456309035.png";
 import photo1 from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
 import photo2 from "@assets/Copy of _83A3865_1755456309034.jpg";
-import photo3 from "@assets/Copy of DSC02921_1755456309035.JPG";
+import photo3 from "@assets/Copy of DSC02921_1755456309035.jpg";
 import photo4 from "@assets/Copy of JMP_3850_1755456309035.jpg";
 import photo5 from "@assets/Copy of sdf-21_1755486190033.jpg";
 import photo6 from "@assets/Strings_1755487567666.jpg";
