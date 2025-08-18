@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import heroImagePath from "@assets/Copy of sdf-21_1755486190033.jpg";
-import logoTextPath from "@assets/Copy of 8_1755456309035.png";
+import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
 
 export default function HeroSection() {
   return (
