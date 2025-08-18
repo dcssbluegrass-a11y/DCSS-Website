@@ -1,4 +1,4 @@
-import stringsImagePath from "@assets/Strings_1755456309036.jpg";
+import stringsImagePath from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
 
 export default function HighlightsSection() {
   return (
@@ -22,7 +22,7 @@ export default function HighlightsSection() {
           </div>
 
           {/* Westword Quote */}
-          <div className="bg-dcss-dark text-dcss-light p-8 rounded-xl shadow-lg">
+          <div className="bg-dcss-dark text-dcss-light p-8 rounded-xl shadow-lg flex items-center justify-center min-h-[300px]">
             <div className="text-center">
               <i className="fas fa-quote-left text-dcss-orange text-4xl mb-4"></i>
               <blockquote className="text-2xl md:text-3xl font-heading font-bold mb-4">
