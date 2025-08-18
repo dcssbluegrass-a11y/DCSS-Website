@@ -7,7 +7,7 @@ export default function HighlightsSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
           {/* WinterWonderGrass Highlight */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-dcss-dark mb-6">
               As seen at WinterWonderGrass
             </h2>
@@ -22,7 +22,7 @@ export default function HighlightsSection() {
           </div>
 
           {/* Westword Quote */}
-          <div className="bg-dcss-dark text-dcss-light p-8 rounded-xl shadow-lg flex items-center justify-center min-h-[300px]">
+          <div className="bg-dcss-dark text-dcss-light p-8 rounded-xl shadow-lg flex items-center justify-center h-full">
             <div className="text-center">
               <i className="fas fa-quote-left text-dcss-orange text-4xl mb-4"></i>
               <blockquote className="text-2xl md:text-3xl font-heading font-bold mb-4">
