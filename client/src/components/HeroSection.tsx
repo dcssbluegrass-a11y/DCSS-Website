@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
         {/* Band logo with dramatic shadow */}
-        <div className="mb-8">
+        <div className="mb-16">
           <img 
             src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
@@ -32,7 +32,7 @@ export default function HeroSection() {
         </div>
         
         {/* Tagline */}
-        <div className="mb-8">
+        <div className="mb-12">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-6 text-dcss-orange drop-shadow-lg">
             Hard-driving, Experimental Bluegrass from Colorado
           </h1>
