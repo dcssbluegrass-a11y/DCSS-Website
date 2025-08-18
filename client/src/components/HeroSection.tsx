@@ -31,8 +31,8 @@ export default function HeroSection() {
           />
         </div>
         
-        {/* Tagline with strong contrast */}
-        <div className="bg-black/60 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-dcss-orange/30">
+        {/* Tagline */}
+        <div className="mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-6 text-dcss-orange drop-shadow-lg">
             Hard-driving, Experimental Bluegrass from Colorado
           </h1>
