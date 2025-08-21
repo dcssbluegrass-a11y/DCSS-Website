@@ -1,5 +1,5 @@
 import FollowUsSection from "@/components/FollowUsSection";
-import { googleDriveImages } from "@/lib/images";
+import bandPhoto from "@assets/Copy of _83A3865_1755456309034.jpg";
 
 export default function Contact() {
   return (
@@ -48,7 +48,7 @@ export default function Contact() {
             {/* Band Photo */}
             <div className="flex justify-center items-center">
               <img 
-                src={googleDriveImages.contactBandPhoto}
+                src={bandPhoto}
                 alt="Deer Creek Sharp Shooters Band" 
                 className="max-w-full h-auto rounded-xl shadow-lg"
               />

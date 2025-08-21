@@ -1,12 +1,13 @@
 import { Link } from "wouter";
-import { googleDriveImages } from "@/lib/images";
+import heroImagePath from "@assets/Strings_1755456309036.jpg";
+import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
 
 export default function HeroSection() {
   return (
     <section 
       className="relative min-h-screen overflow-hidden flex items-center justify-center"
       style={{
-        backgroundImage: `url(${googleDriveImages.heroBackground})`,
+        backgroundImage: `url(${heroImagePath})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -23,7 +24,7 @@ export default function HeroSection() {
         {/* Band logo with dramatic shadow */}
         <div className="mb-32 mt-20">
           <img 
-            src={googleDriveImages.patch8} 
+            src={logoTextPath} 
             alt="Deer Creek Sharp Shooters" 
             style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
             className="mx-auto block drop-shadow-2xl filter brightness-110"

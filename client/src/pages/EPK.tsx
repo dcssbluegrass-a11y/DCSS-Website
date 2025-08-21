@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import FollowUsSection from "@/components/FollowUsSection";
 import JSZip from 'jszip';
-import { googleDriveImages } from "@/lib/images";
+import photo1 from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
+import photo2 from "@assets/Copy of _83A3865_1755456309034.jpg";
+import photo3 from "@assets/Copy of DSC02921_1755456309035.jpg";
+import photo4 from "@assets/Copy of JMP_3850_1755456309035.jpg";
+import photo5 from "@assets/Copy of sdf-21_1755456309036.jpg";
+import photo6 from "@assets/Strings_1755456309036.jpg";
+import patch2 from "@assets/Copy of Patch 2_1755456309035.png";
+import patch5 from "@assets/Copy of Patch 5_1755456309036.png";
+import patch8 from "@assets/Patches - 8 - Edited_1755487516598.png";
 
 export default function EPK() {
   const downloadAsBlob = async (url: string): Promise<Blob> => {
@@ -15,12 +23,12 @@ export default function EPK() {
     const photosFolder = zip.folder("DCSS_Photos");
     
     const photos = [
-      { url: googleDriveImages.epkPhoto1, name: 'Band_Performance_1.jpg' },
-      { url: googleDriveImages.epkPhoto2, name: 'Live_Show_2.jpg' },
-      { url: googleDriveImages.epkPhoto3, name: 'Band_Group_3.jpg' },
-      { url: googleDriveImages.epkPhoto4, name: 'Stage_Performance_4.jpg' },
-      { url: googleDriveImages.epkPhoto5, name: 'Concert_Photo_5.jpg' },
-      { url: googleDriveImages.epkPhoto6, name: 'Festival_Performance_6.jpg' }
+      { url: photo1, name: 'Band_Performance_1.jpg' },
+      { url: photo2, name: 'Live_Show_2.jpg' },
+      { url: photo3, name: 'Band_Group_3.jpg' },
+      { url: photo4, name: 'Stage_Performance_4.jpg' },
+      { url: photo5, name: 'Concert_Photo_5.jpg' },
+      { url: photo6, name: 'Festival_Performance_6.jpg' }
     ];
     
     try {
@@ -51,9 +59,9 @@ export default function EPK() {
     const logosFolder = zip.folder("DCSS_Logos");
     
     const logos = [
-      { url: googleDriveImages.patch2, name: 'DCSS_Logo_Patch_2.png' },
-      { url: googleDriveImages.patch5, name: 'DCSS_Logo_Patch_5.png' },
-      { url: googleDriveImages.patch8, name: 'DCSS_Logo_Patch_8_Edited.png' }
+      { url: patch2, name: 'DCSS_Logo_Patch_2.png' },
+      { url: patch5, name: 'DCSS_Logo_Patch_5.png' },
+      { url: patch8, name: 'DCSS_Logo_Patch_8_Edited.png' }
     ];
     
     try {
@@ -195,12 +203,12 @@ export default function EPK() {
           <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <h2 className="text-3xl font-heading font-bold text-dcss-dark mb-6">Photo Gallery Preview</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <img src={googleDriveImages.epkPhoto1} alt="DCSS Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto2} alt="DCSS Live Show" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto3} alt="DCSS Band Group" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto4} alt="DCSS Stage Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto5} alt="DCSS Concert" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto6} alt="DCSS Festival Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo1} alt="DCSS Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo2} alt="DCSS Live Show" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo3} alt="DCSS Band Group" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo4} alt="DCSS Stage Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo5} alt="DCSS Concert" className="w-full h-32 object-cover rounded-lg" />
+              <img src={photo6} alt="DCSS Festival Performance" className="w-full h-32 object-cover rounded-lg" />
             </div>
           </div>
         </div>
