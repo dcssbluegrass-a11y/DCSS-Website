@@ -1,5 +1,5 @@
 import FollowUsSection from "@/components/FollowUsSection";
-import logoImage from "@assets/Copy of 8_1755456309035.png";
+import bandPhoto from "@assets/Copy of _83A3865_1755456309034.jpg";
 
 export default function Contact() {
   return (
@@ -90,12 +90,12 @@ export default function Contact() {
               </div>
             </div>
             
-            {/* DCSS Logo */}
+            {/* Band Photo */}
             <div className="flex justify-center items-center">
               <img 
-                src={logoImage}
-                alt="Deer Creek Sharp Shooters Logo" 
-                className="max-w-full h-auto"
+                src={bandPhoto}
+                alt="Deer Creek Sharp Shooters Band" 
+                className="max-w-full h-auto rounded-xl shadow-lg"
               />
             </div>
           </div>
