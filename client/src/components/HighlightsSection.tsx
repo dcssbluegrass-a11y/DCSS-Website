@@ -1,4 +1,4 @@
-import stringsImagePath from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
+import { googleDriveImages } from "@/lib/images";
 
 export default function HighlightsSection() {
   return (
@@ -11,7 +11,7 @@ export default function HighlightsSection() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-dcss-dark mb-6">Festival Tested, Venue Approved</h2>
             <div className="relative overflow-hidden rounded-xl shadow-lg">
               <img 
-                src={stringsImagePath} 
+                src={googleDriveImages.highlightsImage} 
                 alt="DCSS performing to full audience at festival" 
                 className="w-full h-64 object-cover"
               />
