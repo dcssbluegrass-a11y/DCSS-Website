@@ -1,4 +1,5 @@
 import groupPhotoPath from "@assets/Copy of sdf-21_1755456309036.jpg";
+import FollowUsSection from "@/components/FollowUsSection";
 
 export default function About() {
   return (
@@ -62,6 +63,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

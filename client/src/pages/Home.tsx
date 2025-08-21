@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import HighlightsSection from "@/components/HighlightsSection";
 import SubscribeSection from "@/components/SubscribeSection";
+import FollowUsSection from "@/components/FollowUsSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <HighlightsSection />
       <SubscribeSection />
+      <FollowUsSection />
     </div>
   );
 }

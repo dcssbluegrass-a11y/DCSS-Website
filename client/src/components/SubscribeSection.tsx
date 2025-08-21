@@ -14,16 +14,39 @@ export default function SubscribeSection() {
 
     setIsLoading(true);
     
-    // Simulate API call - replace with actual mailing list service
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Success!",
-      description: "Thank you for subscribing to our mailing list.",
-    });
-    
-    setEmail("");
-    setIsLoading(false);
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing to our mailing list.",
+        });
+        setEmail("");
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Failed to subscribe. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

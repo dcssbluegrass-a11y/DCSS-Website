@@ -1,3 +1,5 @@
+import FollowUsSection from "@/components/FollowUsSection";
+
 export default function Music() {
   const tracks = [
     { number: "01", title: "Intro" },
@@ -70,6 +72,7 @@ export default function Music() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

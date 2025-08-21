@@ -1,4 +1,5 @@
 import logoTextPath from "@assets/Copy of 8_1755456309035.png";
+import FollowUsSection from "@/components/FollowUsSection";
 
 export default function Merch() {
   const merchItems = [
@@ -93,6 +94,7 @@ export default function Merch() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

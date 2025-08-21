@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import stringsImagePath from "@assets/Strings_1755456309036.jpg";
+import FollowUsSection from "@/components/FollowUsSection";
 
 interface BandsinTownShow {
   id: string;
@@ -140,6 +141,7 @@ export default function Shows() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

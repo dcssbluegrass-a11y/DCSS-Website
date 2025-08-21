@@ -1,3 +1,5 @@
+import FollowUsSection from "@/components/FollowUsSection";
+
 export default function Videos() {
   return (
     <div className="pt-16 min-h-screen bg-dcss-dark">
@@ -28,6 +30,7 @@ export default function Videos() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

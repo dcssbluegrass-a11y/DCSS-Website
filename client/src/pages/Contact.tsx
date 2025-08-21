@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import FollowUsSection from "@/components/FollowUsSection";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -168,6 +169,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }

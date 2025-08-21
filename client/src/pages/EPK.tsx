@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import FollowUsSection from "@/components/FollowUsSection";
 import logoPath from "@assets/Copy of Patch 5_1755456309036.png";
 import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
 import logoWhitePath from "@assets/Copy of Logo 1 w White Outline_1755456309035.png";
@@ -6,32 +7,55 @@ import photo1 from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_
 import photo2 from "@assets/Copy of _83A3865_1755456309034.jpg";
 import photo3 from "@assets/Copy of DSC02921_1755456309035.jpg";
 import photo4 from "@assets/Copy of JMP_3850_1755456309035.jpg";
-import photo5 from "@assets/Copy of sdf-21_1755486190033.jpg";
-import photo6 from "@assets/Strings_1755487567666.jpg";
+import photo5 from "@assets/Copy of sdf-21_1755456309036.jpg";
+import photo6 from "@assets/Strings_1755456309036.jpg";
 
 export default function EPK() {
-  const handleDownloadPhotos = () => {
-    const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
-    photos.forEach((photo, index) => {
+  const handleDownloadPhotos = async () => {
+    console.log('Downloading photos');
+    const photos = [
+      { url: photo1, name: 'DCSS_Photo_1.jpg' },
+      { url: photo2, name: 'DCSS_Photo_2.jpg' },
+      { url: photo3, name: 'DCSS_Photo_3.jpg' },
+      { url: photo4, name: 'DCSS_Photo_4.jpg' },
+      { url: photo5, name: 'DCSS_Photo_5.jpg' },
+      { url: photo6, name: 'DCSS_Photo_6.jpg' }
+    ];
+    
+    // Create a zip-like experience by downloading all at once with proper names
+    for (const photo of photos) {
       const link = document.createElement('a');
-      link.href = photo;
-      link.download = `DCSS_Photo_${index + 1}.jpg`;
+      link.href = photo.url;
+      link.download = photo.name;
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    });
+      // Small delay between downloads to avoid browser blocking
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
   };
 
-  const handleDownloadLogos = () => {
-    const logos = [logoPath, logoTextPath, logoWhitePath];
-    logos.forEach((logo, index) => {
+  const handleDownloadLogos = async () => {
+    console.log('Downloading logos');
+    const logos = [
+      { url: logoPath, name: 'DCSS_Logo_Patch.png' },
+      { url: logoTextPath, name: 'DCSS_Logo_Text.png' },
+      { url: logoWhitePath, name: 'DCSS_Logo_White.png' }
+    ];
+    
+    // Download all logos with proper names
+    for (const logo of logos) {
       const link = document.createElement('a');
-      link.href = logo;
-      link.download = `DCSS_Logo_${index + 1}.png`;
+      link.href = logo.url;
+      link.download = logo.name;
+      link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    });
+      // Small delay between downloads to avoid browser blocking
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
   };
 
   return (
@@ -122,23 +146,27 @@ export default function EPK() {
             <div className="bg-dcss-warm p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-heading font-bold text-dcss-dark mb-4">Documents</h3>
               <div className="space-y-3 mb-4">
-                <a 
-                  href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
-                  download="DCSS_Stage_Plot_Input_List.pdf"
-                  className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg hover:bg-dcss-warm transition-colors cursor-pointer"
-                >
+                <div className="flex items-center space-x-3 p-3 bg-dcss-light rounded-lg">
                   <i className="fas fa-file-pdf text-dcss-orange"></i>
                   <span className="text-sm">Stage Plot & Input List</span>
                   <i className="fas fa-download text-dcss-orange ml-auto"></i>
-                </a>
+                </div>
               </div>
-              <a 
-                href="/attached_assets/Deer Creek Sharp Shooters Stage Plot Input List (3)_1755457651063.pdf"
-                download="DCSS_Stage_Plot_Input_List.pdf"
-                className="block w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold py-2 px-4 rounded text-center transition-colors"
+              <Button
+                onClick={() => {
+                  console.log('Downloading documents');
+                  const link = document.createElement('a');
+                  link.href = '/api/download/stage-plot';
+                  link.download = 'DCSS_Stage_Plot_Input_List.pdf';
+                  link.style.display = 'none';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
               >
                 Download Document
-              </a>
+              </Button>
             </div>
           </div>
 
@@ -188,6 +216,7 @@ export default function EPK() {
           </div>
         </div>
       </section>
+      <FollowUsSection />
     </div>
   );
 }
