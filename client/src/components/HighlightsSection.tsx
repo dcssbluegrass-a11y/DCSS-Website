@@ -8,9 +8,7 @@ export default function HighlightsSection() {
           
           {/* WinterWonderGrass Highlight */}
           <div className="text-center md:text-left flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-dcss-dark mb-6">
-              As seen at WinterWonderGrass
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-dcss-dark mb-6">Festival Tested, Venue Approved</h2>
             <p className="text-lg text-dcss-dark mb-6">Festival-tested, dance-floor approved.</p>
             <div className="relative overflow-hidden rounded-xl shadow-lg">
               <img 
