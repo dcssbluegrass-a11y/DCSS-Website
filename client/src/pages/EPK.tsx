@@ -185,8 +185,9 @@ export default function EPK() {
                 onClick={() => {
                   console.log('Downloading documents');
                   const link = document.createElement('a');
-                  link.href = '/api/download/stage-plot';
+                  link.href = '/DCSS_Stage_Plot_Input_List.pdf';
                   link.download = 'DCSS_Stage_Plot_Input_List.pdf';
+                  link.target = '_blank';
                   link.style.display = 'none';
                   document.body.appendChild(link);
                   link.click();

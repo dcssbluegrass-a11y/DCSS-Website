@@ -15,39 +15,47 @@ export default function SubscribeSection() {
     setIsLoading(true);
     
     try {
-      // Submit to our API which will handle the integration
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
+      // Use Mailchimp's direct form submission for static hosting
+      // This will work on any static hosting platform including Porkbun
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://deercreeksharpshooters.us13.list-manage.com/subscribe/post';
+      form.target = '_blank';
+      
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = 'u';
+      hiddenField.value = 'your_mailchimp_user_id'; // Replace with your actual Mailchimp user ID
+      form.appendChild(hiddenField);
+      
+      const listField = document.createElement('input');
+      listField.type = 'hidden';
+      listField.name = 'id';
+      listField.value = 'your_list_id'; // Replace with your actual list ID
+      form.appendChild(listField);
+      
+      const emailField = document.createElement('input');
+      emailField.type = 'email';
+      emailField.name = 'EMAIL';
+      emailField.value = email;
+      form.appendChild(emailField);
+      
+      // Add honeypot field to prevent spam
+      const honeypot = document.createElement('div');
+      honeypot.style.position = 'absolute';
+      honeypot.style.left = '-5000px';
+      honeypot.innerHTML = '<input name="b_your_mailchimp_user_id_your_list_id" tabindex="-1" value="">';
+      form.appendChild(honeypot);
+      
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+      
+      toast({
+        title: "Success!",
+        description: "Thank you for subscribing! Check your email to confirm.",
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // Also trigger any Mailchimp frontend functionality if available
-        if (typeof window !== 'undefined' && (window as any).mc) {
-          try {
-            (window as any).mc('subscribe', { email });
-          } catch (mcError) {
-            console.log('Mailchimp frontend call failed, but backend succeeded');
-          }
-        }
-
-        toast({
-          title: "Success!",
-          description: "Thank you for subscribing to our mailing list.",
-        });
-        setEmail("");
-      } else {
-        toast({
-          title: "Error",
-          description: data.error || "Failed to subscribe. Please try again.",
-          variant: "destructive",
-        });
-      }
+      setEmail("");
     } catch (error) {
       toast({
         title: "Error",
