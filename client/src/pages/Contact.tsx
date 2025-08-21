@@ -42,51 +42,7 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div>
-                <div className="flex space-x-6">
-                  <a 
-                    href="https://www.facebook.com/deercreeksharpshooters" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
-                  >
-                    <i className="fab fa-facebook-f text-2xl"></i>
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/deercreeksharpshooters" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
-                  >
-                    <i className="fab fa-instagram text-2xl"></i>
-                  </a>
-                  <a 
-                    href="https://www.youtube.com/@deercreeksharpshooters" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
-                  >
-                    <i className="fab fa-youtube text-2xl"></i>
-                  </a>
-                  <a 
-                    href="https://open.spotify.com/search/Deer%20Creek%20Sharp%20Shooters" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
-                  >
-                    <i className="fab fa-spotify text-2xl"></i>
-                  </a>
-                  <a 
-                    href="http://eepurl.com/jlJh8w" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
-                    title="Join Newsletter"
-                  >
-                    <i className="fas fa-envelope text-2xl"></i>
-                  </a>
-                </div>
-              </div>
+              
             </div>
             
             {/* Band Photo */}
