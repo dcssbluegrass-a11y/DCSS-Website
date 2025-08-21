@@ -1,5 +1,5 @@
-import groupPhotoPath from "@assets/Copy of sdf-21_1755456309036.jpg";
 import FollowUsSection from "@/components/FollowUsSection";
+import { googleDriveImages } from "@/lib/images";
 
 export default function About() {
   return (
@@ -55,7 +55,7 @@ export default function About() {
             {/* Band Photo */}
             <div className="flex justify-center">
               <img 
-                src={groupPhotoPath} 
+                src={googleDriveImages.aboutBandPhoto} 
                 alt="DCSS green room group photo" 
                 className="rounded-lg shadow-md w-full max-w-md"
               />
