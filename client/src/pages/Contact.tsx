@@ -113,6 +113,15 @@ export default function Contact() {
                   >
                     <i className="fab fa-spotify text-2xl"></i>
                   </a>
+                  <a 
+                    href="http://eepurl.com/jlJh8w" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-dcss-light hover:text-dcss-orange transition-colors duration-200"
+                    title="Join Newsletter"
+                  >
+                    <i className="fas fa-envelope text-2xl"></i>
+                  </a>
                 </div>
               </div>
             </div>

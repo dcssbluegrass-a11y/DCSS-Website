@@ -28,7 +28,7 @@ export default function About() {
               </p>
 
               <p className="text-lg leading-relaxed">
-                Whether you're a die-hard bluegrass fan or just looking for a good time, DCSS promise a performance that will leave you smiling, clapping, and maybe even singing along. Find their music on all streaming platforms, and follow them on Instagram and Facebook (@deercreeksharpshooters) to stay up to date with shows, new releases, and more!
+                Whether you're a die-hard bluegrass fan or just looking for a good time, DCSS promise a performance that will leave you smiling, clapping, and maybe even singing along. Find their music on all streaming platforms, follow them on Instagram and Facebook (@deercreeksharpshooters), and <a href="http://eepurl.com/jlJh8w" target="_blank" rel="noopener noreferrer" className="text-dcss-orange hover:underline font-semibold">join their newsletter</a> to stay up to date with shows, new releases, and more!
               </p>
 
               {/* Press Quote */}
