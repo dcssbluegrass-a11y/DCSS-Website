@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import FollowUsSection from "@/components/FollowUsSection";
+import JSZip from 'jszip';
 import logoPath from "@assets/Copy of Patch 5_1755456309036.png";
 import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
 import logoWhitePath from "@assets/Copy of Logo 1 w White Outline_1755456309035.png";
@@ -11,50 +12,77 @@ import photo5 from "@assets/Copy of sdf-21_1755456309036.jpg";
 import photo6 from "@assets/Strings_1755456309036.jpg";
 
 export default function EPK() {
+  const downloadAsBlob = async (url: string): Promise<Blob> => {
+    const response = await fetch(url);
+    return response.blob();
+  };
+
   const handleDownloadPhotos = async () => {
     console.log('Downloading photos');
+    const zip = new JSZip();
+    const photosFolder = zip.folder("DCSS_Photos");
+    
     const photos = [
-      { url: photo1, name: 'DCSS_Photo_1.jpg' },
-      { url: photo2, name: 'DCSS_Photo_2.jpg' },
-      { url: photo3, name: 'DCSS_Photo_3.jpg' },
-      { url: photo4, name: 'DCSS_Photo_4.jpg' },
-      { url: photo5, name: 'DCSS_Photo_5.jpg' },
-      { url: photo6, name: 'DCSS_Photo_6.jpg' }
+      { url: photo1, name: 'Band_Performance_1.jpg' },
+      { url: photo2, name: 'Live_Show_2.jpg' },
+      { url: photo3, name: 'Band_Group_3.jpg' },
+      { url: photo4, name: 'Stage_Performance_4.jpg' },
+      { url: photo5, name: 'Concert_Photo_5.jpg' },
+      { url: photo6, name: 'Festival_Performance_6.jpg' }
     ];
     
-    // Create a zip-like experience by downloading all at once with proper names
-    for (const photo of photos) {
+    try {
+      // Add each photo to the zip folder
+      for (const photo of photos) {
+        const blob = await downloadAsBlob(photo.url);
+        photosFolder?.file(photo.name, blob);
+      }
+      
+      // Generate and download the zip file
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
       const link = document.createElement('a');
-      link.href = photo.url;
-      link.download = photo.name;
+      link.href = URL.createObjectURL(zipBlob);
+      link.download = 'DCSS_Photos.zip';
       link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      // Small delay between downloads to avoid browser blocking
-      await new Promise(resolve => setTimeout(resolve, 100));
+      URL.revokeObjectURL(link.href);
+    } catch (error) {
+      console.error('Error creating photos zip:', error);
     }
   };
 
   const handleDownloadLogos = async () => {
     console.log('Downloading logos');
+    const zip = new JSZip();
+    const logosFolder = zip.folder("DCSS_Logos");
+    
     const logos = [
       { url: logoPath, name: 'DCSS_Logo_Patch.png' },
-      { url: logoTextPath, name: 'DCSS_Logo_Text.png' },
-      { url: logoWhitePath, name: 'DCSS_Logo_White.png' }
+      { url: logoTextPath, name: 'DCSS_Logo_Wood_Text.png' },
+      { url: logoWhitePath, name: 'DCSS_Logo_White_Outline.png' }
     ];
     
-    // Download all logos with proper names
-    for (const logo of logos) {
+    try {
+      // Add each logo to the zip folder
+      for (const logo of logos) {
+        const blob = await downloadAsBlob(logo.url);
+        logosFolder?.file(logo.name, blob);
+      }
+      
+      // Generate and download the zip file
+      const zipBlob = await zip.generateAsync({ type: 'blob' });
       const link = document.createElement('a');
-      link.href = logo.url;
-      link.download = logo.name;
+      link.href = URL.createObjectURL(zipBlob);
+      link.download = 'DCSS_Logos.zip';
       link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      // Small delay between downloads to avoid browser blocking
-      await new Promise(resolve => setTimeout(resolve, 100));
+      URL.revokeObjectURL(link.href);
+    } catch (error) {
+      console.error('Error creating logos zip:', error);
     }
   };
 
@@ -95,7 +123,7 @@ export default function EPK() {
                 onClick={handleDownloadLogos}
                 className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
               >
-                Download All Logos
+                Download Logos Folder (.zip)
               </Button>
             </div>
             
@@ -138,7 +166,7 @@ export default function EPK() {
                 onClick={handleDownloadPhotos}
                 className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
               >
-                Download All Photos
+                Download Photos Folder (.zip)
               </Button>
             </div>
             
