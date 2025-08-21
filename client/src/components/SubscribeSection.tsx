@@ -14,26 +14,60 @@ export default function SubscribeSection() {
 
     setIsLoading(true);
 
-    // Use the Mailchimp signup URL with pre-filled email parameter
-    // This opens their form with the email already filled in
-    const mailchimpUrl = 'http://eepurl.com/jlJh8w';
-    const prefilledUrl = `${mailchimpUrl}?EMAIL=${encodeURIComponent(email)}`;
-    
-    // Open in new tab
-    const newTab = window.open(prefilledUrl, '_blank');
-    
-    if (newTab) {
-      toast({
-        title: "Redirecting to signup...",
-        description: "Complete your subscription on the page that just opened. Your email is already filled in!",
-      });
-    } else {
-      toast({
-        title: "Popup blocked",
-        description: "Please allow popups and try again, or copy this link: " + prefilledUrl,
-        variant: "destructive",
-      });
+    // Submit directly to Mailchimp using hidden iframe method
+    // This keeps users on your site while submitting to Mailchimp
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://deercreeksharpshooters.us13.list-manage.com/subscribe/post';
+    form.target = 'mailchimp-iframe';
+    form.style.display = 'none';
+
+    // Create hidden iframe if it doesn't exist
+    let iframe = document.getElementById('mailchimp-iframe') as HTMLIFrameElement;
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'mailchimp-iframe';
+      iframe.name = 'mailchimp-iframe';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
     }
+
+    // Add required fields
+    const userField = document.createElement('input');
+    userField.type = 'hidden';
+    userField.name = 'u';
+    userField.value = '523f609d89ccc9ccb326adec8';
+    form.appendChild(userField);
+
+    const listField = document.createElement('input');
+    listField.type = 'hidden';
+    listField.name = 'id';
+    listField.value = 'abacb43caa';
+    form.appendChild(listField);
+
+    const emailField = document.createElement('input');
+    emailField.type = 'email';
+    emailField.name = 'EMAIL';
+    emailField.value = email;
+    form.appendChild(emailField);
+
+    // Add honeypot field
+    const honeypot = document.createElement('div');
+    honeypot.style.position = 'absolute';
+    honeypot.style.left = '-5000px';
+    honeypot.innerHTML = '<input name="b_523f609d89ccc9ccb326adec8_abacb43caa" tabindex="-1" value="">';
+    form.appendChild(honeypot);
+
+    // Submit the form
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    // Show success message immediately
+    toast({
+      title: "Success!",
+      description: "Thank you for subscribing! Please check your email to confirm your subscription.",
+    });
 
     setEmail("");
     setIsLoading(false);
