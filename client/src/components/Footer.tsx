@@ -9,7 +9,7 @@ export default function Footer() {
             <img src={logoPath} alt="DCSS Logo" className="h-12 mx-auto" />
           </div>
           <p className="text-dcss-light mb-4">&copy; 2024 Deer Creek Sharp Shooters. All rights reserved.</p>
-          <p className="text-dcss-orange font-heading">High-energy Colorado bluegrass with a sharp edge.</p>
+          <p className="text-dcss-orange font-heading">High-energy Colorado bluegrass.</p>
         </div>
       </div>
     </footer>
