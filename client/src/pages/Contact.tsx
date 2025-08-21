@@ -1,43 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import FollowUsSection from "@/components/FollowUsSection";
+import logoImage from "@assets/Copy of 8_1755456309035.png";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    // Simulate form submission - replace with actual contact form service
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Message sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsLoading(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   return (
     <div className="pt-16 min-h-screen bg-dcss-dark text-dcss-light">
       <section className="py-16">
@@ -126,54 +90,13 @@ export default function Contact() {
               </div>
             </div>
             
-            {/* Contact Form */}
-            <div className="bg-dcss-accent bg-opacity-20 p-6 rounded-xl">
-              <h3 className="text-2xl font-heading font-bold text-dcss-orange mb-6">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-dcss-light text-dcss-dark border-0 focus:ring-2 focus:ring-dcss-orange"
-                  required
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-dcss-light text-dcss-dark border-0 focus:ring-2 focus:ring-dcss-orange"
-                  required
-                />
-                <Input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="bg-dcss-light text-dcss-dark border-0 focus:ring-2 focus:ring-dcss-orange"
-                  required
-                />
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="bg-dcss-light text-dcss-dark border-0 focus:ring-2 focus:ring-dcss-orange"
-                  required
-                />
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-dcss-orange hover:bg-orange-600 text-white font-heading font-semibold"
-                >
-                  {isLoading ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
+            {/* DCSS Logo */}
+            <div className="flex justify-center items-center">
+              <img 
+                src={logoImage}
+                alt="Deer Creek Sharp Shooters Logo" 
+                className="max-w-full h-auto"
+              />
             </div>
           </div>
         </div>
