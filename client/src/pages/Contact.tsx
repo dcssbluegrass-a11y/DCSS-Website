@@ -43,7 +43,6 @@ export default function Contact() {
               </div>
               
               <div>
-                <h3 className="text-2xl font-heading font-bold text-dcss-orange mb-6">Follow Us</h3>
                 <div className="flex space-x-6">
                   <a 
                     href="https://www.facebook.com/deercreeksharpshooters" 
