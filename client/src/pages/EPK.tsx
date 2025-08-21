@@ -3,7 +3,8 @@ import FollowUsSection from "@/components/FollowUsSection";
 import JSZip from 'jszip';
 import logoPath from "@assets/Copy of Patch 5_1755456309036.png";
 import logoTextPath from "@assets/Patches - 8 - Edited_1755487516598.png";
-import logoWhitePath from "@assets/Copy of Logo 1 w White Outline_1755456309035.png";
+import logoPatch2 from "@assets/Copy of Patch 2_1755456309035.png";
+
 import photo1 from "@assets/Copy of 44313_53ceb03475c266827a4fcb1a8ab528ab-5_21_2024, 12_34_25 PM_1755487774820.jpg";
 import photo2 from "@assets/Copy of _83A3865_1755456309034.jpg";
 import photo3 from "@assets/Copy of DSC02921_1755456309035.jpg";
@@ -59,9 +60,9 @@ export default function EPK() {
     const logosFolder = zip.folder("DCSS_Logos");
     
     const logos = [
-      { url: logoPath, name: 'DCSS_Logo_Patch.png' },
-      { url: logoTextPath, name: 'DCSS_Logo_Wood_Text.png' },
-      { url: logoWhitePath, name: 'DCSS_Logo_White_Outline.png' }
+      { url: logoPatch2, name: 'DCSS_Patch_2.png' },
+      { url: logoPath, name: 'DCSS_Patch_5.png' },
+      { url: logoTextPath, name: 'DCSS_Patches_8_Edited.png' }
     ];
     
     try {
@@ -106,15 +107,15 @@ export default function EPK() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="bg-dcss-dark p-4 rounded-lg">
                   <img 
-                    src={logoWhitePath} 
-                    alt="DCSS Logo White" 
+                    src={logoPatch2} 
+                    alt="DCSS Patch Logo 2" 
                     className="w-full h-auto"
                   />
                 </div>
                 <div className="bg-dcss-light p-4 rounded-lg border">
                   <img 
-                    src={logoTextPath} 
-                    alt="DCSS Wood Text Logo" 
+                    src={logoPath} 
+                    alt="DCSS Patch Logo 5" 
                     className="w-full h-auto"
                   />
                 </div>
