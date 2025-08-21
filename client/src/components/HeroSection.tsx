@@ -13,11 +13,11 @@ export default function HeroSection() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* Dark overlay for text readability - reduced opacity by 25% */}
+      <div className="absolute inset-0 bg-black/35"></div>
       
-      {/* Gradient overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dcss-dark/80 via-dcss-dark/60 to-dcss-dark/80"></div>
+      {/* Gradient overlay for better text contrast - reduced opacity by 25% */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dcss-dark/60 via-dcss-dark/40 to-dcss-dark/60"></div>
       
       {/* Hero content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
