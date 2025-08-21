@@ -15,12 +15,12 @@ export default function EPK() {
     const photosFolder = zip.folder("DCSS_Photos");
     
     const photos = [
-      { url: googleDriveImages.epkPhoto1, name: 'Band_Performance_1.jpg' },
-      { url: googleDriveImages.epkPhoto2, name: 'Live_Show_2.jpg' },
-      { url: googleDriveImages.epkPhoto3, name: 'Band_Group_3.jpg' },
-      { url: googleDriveImages.epkPhoto4, name: 'Stage_Performance_4.jpg' },
-      { url: googleDriveImages.epkPhoto5, name: 'Concert_Photo_5.jpg' },
-      { url: googleDriveImages.epkPhoto6, name: 'Festival_Performance_6.jpg' }
+      { url: googleDriveImages.pressPhoto1, name: 'DCSS_Press_Photo_1.jpg' },
+      { url: googleDriveImages.pressPhoto2, name: 'DCSS_Press_Photo_2.jpg' },
+      { url: googleDriveImages.pressPhoto3, name: 'DCSS_Press_Photo_3.jpg' },
+      { url: googleDriveImages.pressPhoto4, name: 'DCSS_Press_Photo_4.jpg' },
+      { url: googleDriveImages.pressPhoto5, name: 'DCSS_Press_Photo_5.jpg' },
+      { url: googleDriveImages.pressPhoto6, name: 'DCSS_Press_Photo_6.jpg' }
     ];
     
     try {
@@ -51,9 +51,11 @@ export default function EPK() {
     const logosFolder = zip.folder("DCSS_Logos");
     
     const logos = [
-      { url: googleDriveImages.patch2, name: 'DCSS_Logo_Patch_2.png' },
-      { url: googleDriveImages.patch5, name: 'DCSS_Logo_Patch_5.png' },
-      { url: googleDriveImages.patch8, name: 'DCSS_Logo_Patch_8_Edited.png' }
+      { url: googleDriveImages.logo1, name: 'DCSS_Logo_1.jpg' },
+      { url: googleDriveImages.logo2, name: 'DCSS_Logo_2.png' },
+      { url: googleDriveImages.logo3, name: 'DCSS_Logo_3.png' },
+      { url: googleDriveImages.logo4, name: 'DCSS_Logo_4.jpg' },
+      { url: googleDriveImages.logo5, name: 'DCSS_Logo_5.jpg' }
     ];
     
     try {
@@ -195,12 +197,12 @@ export default function EPK() {
           <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <h2 className="text-3xl font-heading font-bold text-dcss-dark mb-6">Photo Gallery Preview</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <img src={googleDriveImages.epkPhoto1} alt="DCSS Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto2} alt="DCSS Live Show" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto3} alt="DCSS Band Group" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto4} alt="DCSS Stage Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto5} alt="DCSS Concert" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.epkPhoto6} alt="DCSS Festival Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto1} alt="DCSS Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto2} alt="DCSS Live Show" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto3} alt="DCSS Band Group" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto4} alt="DCSS Stage Performance" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto5} alt="DCSS Concert" className="w-full h-32 object-cover rounded-lg" />
+              <img src={googleDriveImages.pressPhoto6} alt="DCSS Festival Performance" className="w-full h-32 object-cover rounded-lg" />
             </div>
           </div>
         </div>

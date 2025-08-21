@@ -23,7 +23,7 @@ export default function HeroSection() {
         {/* Band logo with dramatic shadow */}
         <div className="mb-32 mt-20">
           <img 
-            src={googleDriveImages.patch8} 
+            src={googleDriveImages.logoText} 
             alt="Deer Creek Sharp Shooters" 
             style={{ height: 'auto', width: '100%', maxWidth: '800px' }}
             className="mx-auto block drop-shadow-2xl filter brightness-110"
