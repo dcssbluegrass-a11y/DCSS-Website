@@ -8,38 +8,87 @@ export default function SubscribeSection() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
-    // For proper Mailchimp integration, we need to use their embedded form code
-    // This approach redirects to Mailchimp with email pre-filled - most reliable for static hosting
-    const mailchimpSignupUrl = 'http://eepurl.com/jlJh8w';
-    
-    // Create a form that submits to the Mailchimp signup page
-    const form = document.createElement('form');
-    form.method = 'GET';
-    form.action = mailchimpSignupUrl;
-    form.target = '_blank';
-    form.style.display = 'none';
-    
-    // Add email parameter to pre-fill the form
-    const emailInput = document.createElement('input');
-    emailInput.type = 'hidden';
-    emailInput.name = 'EMAIL';
-    emailInput.value = email;
-    form.appendChild(emailInput);
-    
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-    
-    toast({
-      title: "Opening signup form...",
-      description: "Complete your subscription on the Mailchimp page. Your email is already filled in!",
-    });
-    
-    setEmail("");
+    setIsLoading(true);
+
+    try {
+      // Wait for Mailchimp script to load if it hasn't already
+      let attempts = 0;
+      while (!(window as any).mc && attempts < 20) {
+        await new Promise(resolve => setTimeout(resolve, 100));
+        attempts++;
+      }
+
+      if ((window as any).mc) {
+        // Use Mailchimp's embedded form API with the loaded script
+        (window as any).mc('lists:subscribe', {
+          id: 'abacb43caa',
+          email: email
+        }, function(response: any) {
+          setIsLoading(false);
+          if (response.result === 'success') {
+            toast({
+              title: "Success!",
+              description: "Thank you for subscribing! Please check your email to confirm.",
+            });
+            setEmail("");
+          } else {
+            toast({
+              title: "Subscription Error",
+              description: response.msg || "Please try again.",
+              variant: "destructive",
+            });
+          }
+        });
+      } else {
+        // Fallback: direct form submission to Mailchimp
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'https://deercreeksharpshooters.us13.list-manage.com/subscribe/post';
+        form.target = '_blank';
+        form.style.display = 'none';
+
+        const userField = document.createElement('input');
+        userField.type = 'hidden';
+        userField.name = 'u';
+        userField.value = '523f609d89ccc9ccb326adec8';
+        form.appendChild(userField);
+
+        const listField = document.createElement('input');
+        listField.type = 'hidden';
+        listField.name = 'id';
+        listField.value = 'abacb43caa';
+        form.appendChild(listField);
+
+        const emailField = document.createElement('input');
+        emailField.type = 'email';
+        emailField.name = 'EMAIL';
+        emailField.value = email;
+        form.appendChild(emailField);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+
+        toast({
+          title: "Redirecting...",
+          description: "Complete your subscription on the page that opened.",
+        });
+        
+        setEmail("");
+        setIsLoading(false);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      toast({
+        title: "Error",
+        description: "Failed to subscribe. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
