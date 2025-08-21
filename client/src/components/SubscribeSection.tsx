@@ -25,13 +25,13 @@ export default function SubscribeSection() {
       const hiddenField = document.createElement('input');
       hiddenField.type = 'hidden';
       hiddenField.name = 'u';
-      hiddenField.value = 'your_mailchimp_user_id'; // Replace with your actual Mailchimp user ID
+      hiddenField.value = 'abacb43caa'; // Your Mailchimp list ID
       form.appendChild(hiddenField);
       
       const listField = document.createElement('input');
       listField.type = 'hidden';
       listField.name = 'id';
-      listField.value = 'your_list_id'; // Replace with your actual list ID
+      listField.value = 'abacb43caa'; // Your Mailchimp list ID
       form.appendChild(listField);
       
       const emailField = document.createElement('input');
@@ -44,7 +44,7 @@ export default function SubscribeSection() {
       const honeypot = document.createElement('div');
       honeypot.style.position = 'absolute';
       honeypot.style.left = '-5000px';
-      honeypot.innerHTML = '<input name="b_your_mailchimp_user_id_your_list_id" tabindex="-1" value="">';
+      honeypot.innerHTML = '<input name="b_abacb43caa_abacb43caa" tabindex="-1" value="">';
       form.appendChild(honeypot);
       
       document.body.appendChild(form);
