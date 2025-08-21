@@ -1,7 +1,7 @@
 // Google Drive hosted images - Production URLs for Porkbun hosting
 export const googleDriveImages = {
   // Homepage images
-  heroBackground: "https://lh3.googleusercontent.com/d/15LkpK5BKVca3RqrxHOd8g39UtjNU3vV_", // Hero background image
+  heroBackground: "https://lh3.googleusercontent.com/d/11R8eU2pX0_vbCGJweaF4SfSjuyoXL33H", // Hero background image
   logoText: "https://lh3.googleusercontent.com/d/1eZ8j2Hs53ByuzqTN8tQtVK-nAJLewXBG", // Text-based logo
   
   // Page photos
