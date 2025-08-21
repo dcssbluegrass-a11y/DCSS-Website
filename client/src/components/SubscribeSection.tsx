@@ -15,6 +15,7 @@ export default function SubscribeSection() {
     setIsLoading(true);
     
     try {
+      // Submit to our API which will handle the integration
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
@@ -26,6 +27,15 @@ export default function SubscribeSection() {
       const data = await response.json();
 
       if (response.ok) {
+        // Also trigger any Mailchimp frontend functionality if available
+        if (typeof window !== 'undefined' && (window as any).mc) {
+          try {
+            (window as any).mc('subscribe', { email });
+          } catch (mcError) {
+            console.log('Mailchimp frontend call failed, but backend succeeded');
+          }
+        }
+
         toast({
           title: "Success!",
           description: "Thank you for subscribing to our mailing list.",
@@ -50,7 +60,7 @@ export default function SubscribeSection() {
   };
 
   return (
-    <section className="py-16 bg-dcss-orange">
+    <section className="py-16 bg-dcss-orange subscribe-section">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
           Stay Connected

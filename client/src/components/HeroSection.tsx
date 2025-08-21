@@ -46,7 +46,15 @@ export default function HeroSection() {
               See Our Shows
             </span>
           </Link>
-          <button className="border-3 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-white px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-black/40 backdrop-blur-sm">
+          <button 
+            onClick={() => {
+              const subscribeSection = document.querySelector('.subscribe-section');
+              if (subscribeSection) {
+                subscribeSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="border-3 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-white px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-black/40 backdrop-blur-sm"
+          >
             Join Mailing List
           </button>
         </div>
