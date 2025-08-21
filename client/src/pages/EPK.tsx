@@ -1,9 +1,36 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import FollowUsSection from "@/components/FollowUsSection";
 import JSZip from 'jszip';
 import { googleDriveImages } from "@/lib/images";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function EPK() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
+  const pressPhotos = [
+    { url: googleDriveImages.pressPhoto1, name: 'DCSS_Press_Photo_1.jpg' },
+    { url: googleDriveImages.pressPhoto2, name: 'DCSS_Press_Photo_2.jpg' },
+    { url: googleDriveImages.pressPhoto3, name: 'DCSS_Press_Photo_3.jpg' },
+    { url: googleDriveImages.pressPhoto4, name: 'DCSS_Press_Photo_4.jpg' },
+    { url: googleDriveImages.pressPhoto5, name: 'DCSS_Press_Photo_5.jpg' },
+    { url: googleDriveImages.pressPhoto6, name: 'DCSS_Press_Photo_6.jpg' }
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % pressPhotos.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + pressPhotos.length) % pressPhotos.length);
+  };
+
+  const openGallery = (index: number) => {
+    setCurrentImageIndex(index);
+    setIsGalleryOpen(true);
+  };
   const downloadAsBlob = async (url: string): Promise<Blob> => {
     const response = await fetch(url);
     return response.blob();
@@ -14,14 +41,7 @@ export default function EPK() {
     const zip = new JSZip();
     const photosFolder = zip.folder("DCSS_Photos");
     
-    const photos = [
-      { url: googleDriveImages.pressPhoto1, name: 'DCSS_Press_Photo_1.jpg' },
-      { url: googleDriveImages.pressPhoto2, name: 'DCSS_Press_Photo_2.jpg' },
-      { url: googleDriveImages.pressPhoto3, name: 'DCSS_Press_Photo_3.jpg' },
-      { url: googleDriveImages.pressPhoto4, name: 'DCSS_Press_Photo_4.jpg' },
-      { url: googleDriveImages.pressPhoto5, name: 'DCSS_Press_Photo_5.jpg' },
-      { url: googleDriveImages.pressPhoto6, name: 'DCSS_Press_Photo_6.jpg' }
-    ];
+    const photos = pressPhotos;
     
     try {
       // Add each photo to the zip folder
@@ -197,13 +217,89 @@ export default function EPK() {
           <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <h2 className="text-3xl font-heading font-bold text-dcss-dark mb-6">Photo Gallery Preview</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <img src={googleDriveImages.pressPhoto1} alt="DCSS Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.pressPhoto2} alt="DCSS Live Show" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.pressPhoto3} alt="DCSS Band Group" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.pressPhoto4} alt="DCSS Stage Performance" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.pressPhoto5} alt="DCSS Concert" className="w-full h-32 object-cover rounded-lg" />
-              <img src={googleDriveImages.pressPhoto6} alt="DCSS Festival Performance" className="w-full h-32 object-cover rounded-lg" />
+              {pressPhotos.map((photo, index) => (
+                <div
+                  key={index}
+                  className="relative cursor-pointer group overflow-hidden rounded-lg"
+                  onClick={() => openGallery(index)}
+                >
+                  <img 
+                    src={photo.url} 
+                    alt={`DCSS Press Photo ${index + 1}`} 
+                    className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+
+            {/* Interactive Gallery Modal */}
+            <Dialog open={isGalleryOpen} onOpenChange={setIsGalleryOpen}>
+              <DialogContent className="max-w-4xl w-full p-0 bg-black border-none">
+                <div className="relative">
+                  {/* Close button */}
+                  <button
+                    onClick={() => setIsGalleryOpen(false)}
+                    className="absolute top-4 right-4 z-50 text-white hover:text-gray-300 transition-colors"
+                  >
+                    <X size={24} />
+                  </button>
+
+                  {/* Main image */}
+                  <div className="relative">
+                    <img
+                      src={pressPhotos[currentImageIndex]?.url}
+                      alt={`DCSS Press Photo ${currentImageIndex + 1}`}
+                      className="w-full h-auto max-h-[80vh] object-contain"
+                    />
+
+                    {/* Navigation arrows */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75"
+                    >
+                      <ChevronLeft size={24} />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75"
+                    >
+                      <ChevronRight size={24} />
+                    </button>
+
+                    {/* Image counter */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-3 py-1 rounded-full text-sm">
+                      {currentImageIndex + 1} / {pressPhotos.length}
+                    </div>
+                  </div>
+
+                  {/* Thumbnail navigation */}
+                  <div className="flex justify-center space-x-2 p-4 bg-black bg-opacity-75">
+                    {pressPhotos.map((photo, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`w-16 h-12 rounded overflow-hidden border-2 transition-all ${
+                          index === currentImageIndex ? 'border-dcss-orange' : 'border-transparent'
+                        }`}
+                      >
+                        <img
+                          src={photo.url}
+                          alt={`Thumbnail ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </section>
