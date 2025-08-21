@@ -10,7 +10,7 @@ Preferred communication style: Simple, everyday language.
 
 ## Frontend Architecture
 - **Framework**: React 18 with TypeScript using Vite for build tooling
-- **Routing**: Wouter for client-side routing with pages for Home, Shows, About, Music, Videos, Merch, EPK (Electronic Press Kit), and Contact
+- **Routing**: Wouter for client-side routing with pages for Home, Shows, About, Music, Videos, EPK (Electronic Press Kit), and Contact
 - **UI Framework**: shadcn/ui components built on Radix UI primitives with Tailwind CSS for styling
 - **State Management**: TanStack React Query for server state management with Bandsintown API integration
 - **Styling**: Custom CSS variables defining brand colors (DCSS dark, orange, light, warm, accent) and typography (Oswald for headings, Merriweather for body text)
