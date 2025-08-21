@@ -12,19 +12,60 @@ export default function SubscribeSection() {
     e.preventDefault();
     if (!email) return;
 
-    // Use Mailchimp's hosted form - this will work perfectly on static hosting
-    const mailchimpUrl = "http://eepurl.com/jlJh8w";
+    setIsLoading(true);
+
+    // Use Mailchimp's JSONP endpoint for seamless integration
+    const url = 'https://deercreeksharpshooters.us13.list-manage.com/subscribe/post-json';
+    const data = {
+      u: '523f609d89ccc9ccb326adec8',
+      id: 'abacb43caa',
+      EMAIL: email,
+      c: 'callback_' + Date.now()
+    };
+
+    // Create JSONP callback
+    const callbackName = data.c;
+    (window as any)[callbackName] = (response: any) => {
+      setIsLoading(false);
+      
+      if (response.result === 'success') {
+        toast({
+          title: "Success!",
+          description: "Thank you for subscribing! Please check your email to confirm.",
+        });
+        setEmail("");
+      } else {
+        const errorMsg = response.msg || "Failed to subscribe. Please try again.";
+        toast({
+          title: "Subscription Error",
+          description: errorMsg.replace(/^\d+ - /, ''), // Remove error code prefix
+          variant: "destructive",
+        });
+      }
+      
+      // Clean up
+      delete (window as any)[callbackName];
+      document.head.removeChild(script);
+    };
+
+    // Create and execute JSONP request
+    const script = document.createElement('script');
+    const params = new URLSearchParams(data).toString();
+    script.src = `${url}?${params}`;
     
-    // Open Mailchimp form in new tab/window with the email pre-filled if possible
-    const url = `${mailchimpUrl}?EMAIL=${encodeURIComponent(email)}`;
-    window.open(url, '_blank');
-    
-    toast({
-      title: "Redirecting to Mailchimp",
-      description: "Complete your subscription on the Mailchimp page that just opened.",
-    });
-    
-    setEmail("");
+    // Handle script loading errors
+    script.onerror = () => {
+      setIsLoading(false);
+      toast({
+        title: "Connection Error",
+        description: "Unable to connect to mailing list. Please try again.",
+        variant: "destructive",
+      });
+      delete (window as any)[callbackName];
+      document.head.removeChild(script);
+    };
+
+    document.head.appendChild(script);
   };
 
   return (
