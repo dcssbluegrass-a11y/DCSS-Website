@@ -36,9 +36,7 @@ export default function HeroSection() {
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-6 text-dcss-orange drop-shadow-lg">
             Hard-driving, Experimental Bluegrass from Colorado
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-8 text-white font-light drop-shadow-md">
-            Fast tunes, big crowds, bigger smiles.
-          </p>
+          
         </div>
         
         {/* Call to action buttons */}
