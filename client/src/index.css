@@ -5,22 +5,22 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 98%); /* Off-White */
+  --background: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --foreground: hsl(0, 0%, 11%);
-  --card: hsl(0, 0%, 100%);
+  --card: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --card-foreground: hsl(0, 0%, 11%);
-  --popover: hsl(0, 0%, 100%);
+  --popover: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --popover-foreground: hsl(0, 0%, 11%);
   --primary: hsl(20, 95%, 64%); /* Updated Orange */
-  --primary-foreground: hsl(0, 0%, 100%);
+  --primary-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --secondary: hsl(168, 46%, 15%); /* Forest Green */
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(45, 76%, 93%); /* Warm Cream */
+  --secondary-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
+  --muted: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --muted-foreground: hsl(0, 0%, 45%);
   --accent: hsl(161, 36%, 18%); /* Dark Green */
-  --accent-foreground: hsl(0, 0%, 100%);
+  --accent-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
+  --destructive-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --border: hsl(0, 0%, 90%);
   --input: hsl(0, 0%, 95%);
   --ring: hsl(20, 94%, 63%);
@@ -40,21 +40,21 @@
 
 .dark {
   --background: hsl(161, 36%, 18%); /* Dark Green */
-  --foreground: hsl(45, 76%, 93%); /* Warm Cream */
+  --foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --card: hsl(168, 46%, 15%); /* Forest Green */
-  --card-foreground: hsl(45, 76%, 93%);
+  --card-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --popover: hsl(161, 36%, 18%);
-  --popover-foreground: hsl(45, 76%, 93%);
+  --popover-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --primary: hsl(20, 95%, 64%); /* Orange */
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(45, 76%, 93%); /* Warm Cream */
+  --primary-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
+  --secondary: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --secondary-foreground: hsl(161, 36%, 18%);
   --muted: hsl(168, 46%, 20%);
-  --muted-foreground: hsl(45, 76%, 85%);
+  --muted-foreground: hsl(36, 77%, 85%);
   --accent: hsl(20, 95%, 64%); /* Orange */
-  --accent-foreground: hsl(0, 0%, 100%);
+  --accent-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 98%);
+  --destructive-foreground: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --border: hsl(168, 46%, 25%);
   --input: hsl(168, 46%, 20%);
   --ring: hsl(20, 95%, 64%);
