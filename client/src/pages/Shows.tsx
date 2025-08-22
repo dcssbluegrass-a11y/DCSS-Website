@@ -47,7 +47,7 @@ export default function Shows() {
     { name: "WinterWonderGrass Steamboat", location: "Steamboat Springs, CO" },
     { name: "Palisade Bluegrass and Roots", location: "Palisade, CO" },
     { name: "The Ramble Festival", location: "Darlington, MD" },
-    { name: "Tico Time Bluegrass Festival", location: "Colorado" },
+    { name: "Tico Time Bluegrass Festival", location: "Aztec, NM" },
   ];
 
   return (
