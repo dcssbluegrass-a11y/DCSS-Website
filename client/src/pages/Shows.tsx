@@ -46,7 +46,7 @@ export default function Shows() {
   const pastShows = [
     { name: "WinterWonderGrass Steamboat", location: "Steamboat Springs, CO" },
     { name: "Palisade Bluegrass and Roots", location: "Palisade, CO" },
-    { name: "The Ramble Festival", location: "Colorado" },
+    { name: "The Ramble Festival", location: "Darlington, MD" },
     { name: "Tico Time Bluegrass Festival", location: "Colorado" },
   ];
 
