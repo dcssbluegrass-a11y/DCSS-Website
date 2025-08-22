@@ -128,7 +128,7 @@ export default function Shows() {
             
             {/* Past Shows */}
             <div className="bg-dcss-light p-6 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-heading font-bold text-dcss-dark mb-6">Recent Performances</h3>
+              <h3 className="text-2xl font-heading font-bold text-dcss-dark mb-6">Notable Festival Appearances</h3>
               <div className="space-y-4">
                 {pastShows.map((show, index) => (
                   <div key={index} className="p-4 border-l-4 border-dcss-accent">
