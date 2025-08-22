@@ -29,8 +29,8 @@
   /* DCSS Brand Colors - Forest Green Theme */
   --dcss-dark: hsl(168, 46%, 15%); /* Forest Green #264653 */
   --dcss-orange: hsl(20, 95%, 64%); /* Orange #FC8448 */
-  --dcss-light: hsl(45, 76%, 93%); /* Warm Cream #F5F0E6 */
-  --dcss-warm: hsl(0, 0%, 98%); /* Off-White #F9F9F9 */
+  --dcss-light: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
+  --dcss-warm: hsl(36, 77%, 92%); /* Warm Cream #FFEAD1 */
   --dcss-accent: hsl(161, 36%, 18%); /* Dark Green #1E392A */
 
   /* Typography */
