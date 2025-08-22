@@ -6,6 +6,20 @@ This is a band website for Deer Creek Sharp Shooters (DCSS), a Colorado bluegras
 
 Preferred communication style: Simple, everyday language.
 
+# Recent Changes (August 2025)
+
+## Color Scheme Update
+- **Complete White Replacement**: All white text throughout the website has been replaced with warm cream color (#FFEAD1)
+- **Affected Components**: FollowUsSection, SubscribeSection, HeroSection, all page titles, and social media icons
+- **Brand Consistency**: Now maintains complete color harmony with dark green (#264653), orange (#FC8448), and warm cream (#FFEAD1)
+
+## Shows Page Updates
+- **Section Title**: Changed "Recent Performances" to "Notable Festival Appearances"
+- **Location Updates**: 
+  - The Ramble Festival: Updated from "Colorado" to "Darlington, MD"
+  - Tico Time Bluegrass Festival: Updated from "Colorado" to "Aztec, NM"
+- **Accurate Geographic Representation**: Festival listings now show correct locations across multiple states
+
 # System Architecture
 
 ## Frontend Architecture
