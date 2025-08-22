@@ -61,7 +61,7 @@ export default function Shows() {
             className="w-full h-full object-cover opacity-30"
           />
         </div>
-        <div className="relative z-10 text-center text-white">
+        <div className="relative z-10 text-center text-dcss-light">
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">Shows</h1>
           <p className="text-xl">Catch us live at festivals and venues across Colorado</p>
         </div>

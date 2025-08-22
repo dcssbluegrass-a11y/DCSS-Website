@@ -41,7 +41,7 @@ export default function HeroSection() {
         {/* Call to action buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Link href="/shows">
-            <span className="bg-dcss-orange hover:bg-orange-600 text-white px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 inline-block cursor-pointer shadow-xl hover:shadow-2xl transform hover:scale-105">
+            <span className="bg-dcss-orange hover:bg-orange-600 text-dcss-light px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 inline-block cursor-pointer shadow-xl hover:shadow-2xl transform hover:scale-105">
               See Our Shows
             </span>
           </Link>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                 subscribeSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="border-3 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-white px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-black/40 backdrop-blur-sm"
+            className="border-3 border-dcss-orange text-dcss-orange hover:bg-dcss-orange hover:text-dcss-light px-10 py-4 rounded-xl font-heading font-bold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 bg-black/40 backdrop-blur-sm"
           >
             Join Mailing List
           </button>
