@@ -207,7 +207,7 @@ export default function EPK() {
                 <ul className="space-y-2 text-gray-700">
                   <li><strong>Email:</strong> <a href="mailto:DCSSbluegrass@gmail.com" className="text-dcss-orange hover:underline">DCSSbluegrass@gmail.com</a></li>
                   <li><strong>Phone:</strong> <a href="tel:443-417-7287" className="text-dcss-orange hover:underline">443-417-7287</a></li>
-                  <li><strong>Website:</strong> <a href="/" className="text-dcss-orange hover:underline">deercreeksharpshooters.com</a></li>
+                  <li><strong>Website:</strong> <a href="/" className="text-dcss-orange hover:underline">dcss.band</a></li>
                 </ul>
               </div>
             </div>
