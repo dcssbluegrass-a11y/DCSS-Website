@@ -98,130 +98,136 @@ export default function Shows() {
 
       {/* Shows Content */}
       <section className="py-16 bg-dcss-warm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Toggle Buttons */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex rounded-lg bg-dcss-light p-1 shadow-lg">
-              <Button
-                data-testid="button-upcoming-shows"
-                onClick={() => setShowType('upcoming')}
-                className={`px-6 py-2 rounded-md font-heading font-semibold transition-all ${
-                  showType === 'upcoming'
-                    ? 'bg-dcss-orange text-dcss-light'
-                    : 'bg-transparent text-dcss-dark hover:bg-dcss-warm'
-                }`}
-              >
-                Upcoming Shows
-              </Button>
-              <Button
-                data-testid="button-past-shows"
-                onClick={() => setShowType('past')}
-                className={`px-6 py-2 rounded-md font-heading font-semibold transition-all ${
-                  showType === 'past'
-                    ? 'bg-dcss-orange text-dcss-light'
-                    : 'bg-transparent text-dcss-dark hover:bg-dcss-warm'
-                }`}
-              >
-                Past Shows
-              </Button>
-            </div>
-          </div>
-
-          {/* Shows Display */}
-          <div className="bg-dcss-light p-8 rounded-xl shadow-lg">
-            <h3 className="text-3xl font-heading font-bold text-dcss-dark mb-6">
-              {showType === 'upcoming' ? 'Upcoming Shows' : 'Past Shows'}
-            </h3>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
             
-            <div className="space-y-4">
-              {isLoading ? (
-                <div className="p-4 border-l-4 border-dcss-orange bg-dcss-warm">
-                  <div className="font-heading font-semibold text-dcss-dark">
-                    Loading {showType} shows...
-                  </div>
+            {/* Upcoming/Past Shows Toggle Section */}
+            <div className="bg-dcss-light p-6 rounded-xl shadow-lg">
+              {/* Toggle Buttons */}
+              <div className="flex justify-center mb-6">
+                <div className="inline-flex rounded-lg bg-dcss-warm p-1 shadow-md">
+                  <Button
+                    data-testid="button-upcoming-shows"
+                    onClick={() => setShowType('upcoming')}
+                    className={`px-4 py-2 rounded-md font-heading font-semibold transition-all ${
+                      showType === 'upcoming'
+                        ? 'bg-dcss-orange text-dcss-light'
+                        : 'bg-transparent text-dcss-dark hover:bg-dcss-light'
+                    }`}
+                  >
+                    Upcoming
+                  </Button>
+                  <Button
+                    data-testid="button-past-shows"
+                    onClick={() => setShowType('past')}
+                    className={`px-4 py-2 rounded-md font-heading font-semibold transition-all ${
+                      showType === 'past'
+                        ? 'bg-dcss-orange text-dcss-light'
+                        : 'bg-transparent text-dcss-dark hover:bg-dcss-light'
+                    }`}
+                  >
+                    Past
+                  </Button>
                 </div>
-              ) : showType === 'upcoming' ? (
-                upcomingShows.length > 0 ? (
-                  upcomingShows.map((show) => (
-                    <div key={show.id} data-testid={`show-upcoming-${show.id}`} className="p-4 border-l-4 border-dcss-orange bg-dcss-warm">
-                      <div className="font-heading font-semibold text-dcss-dark mb-2">
-                        {show.venue.name}
-                      </div>
-                      <p className="text-sm text-dcss-dark mb-1">
-                        {show.venue.city}, {show.venue.region}
-                      </p>
-                      <p className="text-sm text-dcss-dark opacity-75 mb-2">
-                        {new Date(show.datetime).toLocaleDateString('en-US', {
-                          weekday: 'long',
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                          hour: '2-digit',
-                          minute: '2-digit'
-                        })}
-                      </p>
-                      {show.offers && show.offers.length > 0 && show.offers[0].url && (
-                        <a 
-                          href={show.offers[0].url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          data-testid={`link-tickets-${show.id}`}
-                          className="inline-block text-dcss-orange hover:text-orange-600 font-semibold text-sm"
-                        >
-                          Get Tickets →
-                        </a>
-                      )}
-                    </div>
-                  ))
-                ) : (
+              </div>
+
+              <h3 className="text-2xl font-heading font-bold text-dcss-dark mb-6">
+                {showType === 'upcoming' ? 'Upcoming Shows' : 'Past Shows'}
+              </h3>
+              
+              <div className="space-y-4">
+                {isLoading ? (
                   <div className="p-4 border-l-4 border-dcss-orange bg-dcss-warm">
                     <div className="font-heading font-semibold text-dcss-dark">
-                      Check back soon for upcoming dates!
+                      Loading {showType} shows...
                     </div>
-                    <p className="text-sm text-dcss-dark opacity-75">
-                      Follow us on social media for the latest announcements
-                    </p>
                   </div>
-                )
-              ) : (
-                <>
-                  {pastShows.length > 0 && (
-                    <>
-                      {pastShows
-                        .sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime())
-                        .map((show) => (
-                          <div key={show.id} data-testid={`show-past-${show.id}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
-                            <div className="font-heading font-semibold text-dcss-dark mb-2">
-                              {show.venue.name}
-                            </div>
-                            <p className="text-sm text-dcss-dark mb-1">
-                              {show.venue.city}, {show.venue.region}
-                            </p>
-                            <p className="text-sm text-dcss-dark opacity-75">
-                              {new Date(show.datetime).toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                              })}
-                            </p>
+                ) : showType === 'upcoming' ? (
+                  upcomingShows.length > 0 ? (
+                    upcomingShows.map((show) => (
+                      <div key={show.id} data-testid={`show-upcoming-${show.id}`} className="p-4 border-l-4 border-dcss-orange bg-dcss-warm">
+                        <div className="font-heading font-semibold text-dcss-dark mb-2">
+                          {show.venue.name}
+                        </div>
+                        <p className="text-sm text-dcss-dark mb-1">
+                          {show.venue.city}, {show.venue.region}
+                        </p>
+                        <p className="text-sm text-dcss-dark opacity-75 mb-2">
+                          {new Date(show.datetime).toLocaleDateString('en-US', {
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                          })}
+                        </p>
+                        {show.offers && show.offers.length > 0 && show.offers[0].url && (
+                          <a 
+                            href={show.offers[0].url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            data-testid={`link-tickets-${show.id}`}
+                            className="inline-block text-dcss-orange hover:text-orange-600 font-semibold text-sm"
+                          >
+                            Get Tickets →
+                          </a>
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="p-4 border-l-4 border-dcss-orange bg-dcss-warm">
+                      <div className="font-heading font-semibold text-dcss-dark">
+                        Check back soon for upcoming dates!
+                      </div>
+                      <p className="text-sm text-dcss-dark opacity-75">
+                        Follow us on social media for the latest announcements
+                      </p>
+                    </div>
+                  )
+                ) : (
+                  pastShows.length > 0 ? (
+                    pastShows
+                      .sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime())
+                      .map((show) => (
+                        <div key={show.id} data-testid={`show-past-${show.id}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
+                          <div className="font-heading font-semibold text-dcss-dark mb-2">
+                            {show.venue.name}
                           </div>
-                        ))}
-                    </>
-                  )}
-                  
-                  <div className="p-4 border-l-4 border-dcss-accent bg-dcss-warm mb-4 mt-6">
-                    <div className="font-heading font-semibold text-dcss-dark">
-                      Notable Festival Appearances
+                          <p className="text-sm text-dcss-dark mb-1">
+                            {show.venue.city}, {show.venue.region}
+                          </p>
+                          <p className="text-sm text-dcss-dark opacity-75">
+                            {new Date(show.datetime).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            })}
+                          </p>
+                        </div>
+                      ))
+                  ) : (
+                    <div className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
+                      <div className="font-heading font-semibold text-dcss-dark">
+                        No past shows available
+                      </div>
                     </div>
+                  )
+                )}
+              </div>
+            </div>
+            
+            {/* Notable Festival Appearances */}
+            <div className="bg-dcss-light p-6 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-heading font-bold text-dcss-dark mb-6">Notable Festival Appearances</h3>
+              <div className="space-y-4">
+                {notableFestivals.map((festival, index) => (
+                  <div key={index} data-testid={`festival-${index}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
+                    <div className="font-heading font-semibold text-dcss-dark">{festival.name}</div>
+                    <p className="text-sm text-dcss-dark opacity-75">{festival.location}</p>
                   </div>
-                  {notableFestivals.map((festival, index) => (
-                    <div key={index} data-testid={`festival-${index}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
-                      <div className="font-heading font-semibold text-dcss-dark">{festival.name}</div>
-                      <p className="text-sm text-dcss-dark opacity-75">{festival.location}</p>
-                    </div>
-                  ))}
-                </>
-              )}
+                ))}
+              </div>
             </div>
           </div>
         </div>
