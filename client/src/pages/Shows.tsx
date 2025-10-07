@@ -184,39 +184,43 @@ export default function Shows() {
                   </div>
                 )
               ) : (
-                pastShows.length > 0 ? (
-                  pastShows.map((show) => (
-                    <div key={show.id} data-testid={`show-past-${show.id}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
-                      <div className="font-heading font-semibold text-dcss-dark mb-2">
-                        {show.venue.name}
-                      </div>
-                      <p className="text-sm text-dcss-dark mb-1">
-                        {show.venue.city}, {show.venue.region}
-                      </p>
-                      <p className="text-sm text-dcss-dark opacity-75">
-                        {new Date(show.datetime).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </p>
+                <>
+                  {pastShows.length > 0 && (
+                    <>
+                      {pastShows
+                        .sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime())
+                        .map((show) => (
+                          <div key={show.id} data-testid={`show-past-${show.id}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
+                            <div className="font-heading font-semibold text-dcss-dark mb-2">
+                              {show.venue.name}
+                            </div>
+                            <p className="text-sm text-dcss-dark mb-1">
+                              {show.venue.city}, {show.venue.region}
+                            </p>
+                            <p className="text-sm text-dcss-dark opacity-75">
+                              {new Date(show.datetime).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })}
+                            </p>
+                          </div>
+                        ))}
+                    </>
+                  )}
+                  
+                  <div className="p-4 border-l-4 border-dcss-accent bg-dcss-warm mb-4 mt-6">
+                    <div className="font-heading font-semibold text-dcss-dark">
+                      Notable Festival Appearances
                     </div>
-                  ))
-                ) : (
-                  <>
-                    <div className="p-4 border-l-4 border-dcss-accent bg-dcss-warm mb-4">
-                      <div className="font-heading font-semibold text-dcss-dark">
-                        Notable Festival Appearances
-                      </div>
+                  </div>
+                  {notableFestivals.map((festival, index) => (
+                    <div key={index} data-testid={`festival-${index}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
+                      <div className="font-heading font-semibold text-dcss-dark">{festival.name}</div>
+                      <p className="text-sm text-dcss-dark opacity-75">{festival.location}</p>
                     </div>
-                    {notableFestivals.map((festival, index) => (
-                      <div key={index} data-testid={`festival-${index}`} className="p-4 border-l-4 border-dcss-accent bg-dcss-warm">
-                        <div className="font-heading font-semibold text-dcss-dark">{festival.name}</div>
-                        <p className="text-sm text-dcss-dark opacity-75">{festival.location}</p>
-                      </div>
-                    ))}
-                  </>
-                )
+                  ))}
+                </>
               )}
             </div>
           </div>
