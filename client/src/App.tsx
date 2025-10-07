@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,22 +15,24 @@ import EPK from "@/pages/EPK";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
-function Router() {
+function AppRouter() {
   return (
-    <div className="min-h-screen bg-dcss-light">
-      <Navigation />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/shows" component={Shows} />
-        <Route path="/about" component={About} />
-        <Route path="/music" component={Music} />
-        <Route path="/videos" component={Videos} />
-        <Route path="/epk" component={EPK} />
-        <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </div>
+    <Router hook={useHashLocation}>
+      <div className="min-h-screen bg-dcss-light">
+        <Navigation />
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/shows" component={Shows} />
+          <Route path="/about" component={About} />
+          <Route path="/music" component={Music} />
+          <Route path="/videos" component={Videos} />
+          <Route path="/epk" component={EPK} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
@@ -38,7 +41,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <AppRouter />
       </TooltipProvider>
     </QueryClientProvider>
   );
