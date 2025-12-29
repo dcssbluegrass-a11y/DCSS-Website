@@ -1,175 +1,169 @@
 # DCSS Website - Image Update Instructions
 
-This guide explains how to add, update, or remove images on the Deer Creek Sharp Shooters website.
+This guide explains how to update images on the Deer Creek Sharp Shooters website using Replit Agent.
 
 ---
 
-## Overview
+## How It Works
 
-The website uses images hosted on Google Drive. When you want to change an image, you need to:
-1. Upload the new image to Google Drive and get its link
-2. Update the image reference in the code
-3. Build and push the changes to make them live
+You provide Google Drive image links in a chat prompt, and Replit Agent handles all the code changes, building, and deployment for you.
 
 ---
 
-## Step 1: Prepare Your Google Drive Image
+## Step 1: Prepare Your Images on Google Drive
 
-### Upload to Google Drive
+### Upload Your Image
 1. Go to [Google Drive](https://drive.google.com)
 2. Upload your image to the DCSS media folder
 
-### Get the Shareable Link
+### Make It Shareable
 1. Right-click on the image
 2. Click **Share**
 3. Change access to **"Anyone with the link"** can view
 4. Click **Copy link**
 
-### Extract the File ID
 Your link will look like this:
 ```
 https://drive.google.com/file/d/1ABC123DEF456XYZ/view?usp=sharing
 ```
 
-The **File ID** is the long string between `/d/` and `/view`:
+---
+
+## Step 2: Send a Chat Prompt
+
+Copy one of the prompt templates below, fill in your Google Drive link(s), and send it in the Replit Agent chat.
+
+---
+
+## Prompt Templates
+
+### Update the Homepage Hero Background
 ```
-1ABC123DEF456XYZ
+Update the homepage hero background image to this Google Drive link:
+[paste your link here]
+```
+
+### Update the Homepage "Festival Tested" Section Image
+```
+Update the "Festival Tested" highlights section image on the homepage to this Google Drive link:
+[paste your link here]
+```
+
+### Update the About Page Band Photo
+```
+Update the About page band photo to this Google Drive link:
+[paste your link here]
+```
+
+### Update the Contact Page Band Photo
+```
+Update the Contact page band photo to this Google Drive link:
+[paste your link here]
+```
+
+### Update the Footer Logo
+```
+Update the footer logo to this Google Drive link:
+[paste your link here]
+```
+
+### Add New EPK Press Photos
+```
+Add these new press photos to the EPK gallery:
+1. [paste Google Drive link]
+2. [paste Google Drive link]
+3. [paste Google Drive link]
+```
+
+### Replace All EPK Press Photos
+```
+Replace all EPK press photos with these Google Drive links:
+1. [paste link] - filename: DCSS_Press_Photo_1.jpg
+2. [paste link] - filename: DCSS_Press_Photo_2.jpg
+3. [paste link] - filename: DCSS_Press_Photo_3.jpg
+(continue for all photos)
+```
+
+### Update EPK Logos
+```
+Update the EPK downloadable logos to these Google Drive links:
+1. [paste link] - filename: DCSS_Logo_1.png
+2. [paste link] - filename: DCSS_Logo_2.png
+```
+
+### Update Multiple Images at Once
+```
+Update the following images:
+
+Homepage hero background:
+[paste link]
+
+About page band photo:
+[paste link]
+
+Contact page band photo:
+[paste link]
 ```
 
 ---
 
-## Step 2: Update the Code
+## Step 3: Deploy Changes
 
-### Open the Images File
-1. In Replit, open: `client/src/lib/images.ts`
+After the Agent makes the code changes, send this prompt:
 
-### Find the Image You Want to Change
-
-The file contains different sections:
-
-**Main Page Images:**
-- `heroBackground` - The large background image on the homepage
-- `highlightsImage` - The "Festival Tested" section on homepage
-- `aboutBandPhoto` - The photo on the About page
-- `contactBandPhoto` - The photo on the Contact page
-- `logoText` - The band logo
-
-**EPK Press Photos:**
-- `pressPhoto1` through `pressPhoto17` - Gallery photos on EPK page
-
-**EPK Logos:**
-- `logo1` through `logo4` - Downloadable logos on EPK page
-
-### Update the Image URL
-Replace the File ID in the URL. For example, change:
-```javascript
-heroBackground: "https://lh3.googleusercontent.com/d/OLD_FILE_ID",
 ```
-To:
-```javascript
-heroBackground: "https://lh3.googleusercontent.com/d/YOUR_NEW_FILE_ID",
+Build the website and prepare it for deployment
 ```
 
-### Adding New EPK Photos
-To add more photos to the EPK gallery:
-
-1. Add a new line in `images.ts`:
-```javascript
-pressPhoto18: "https://lh3.googleusercontent.com/d/YOUR_FILE_ID",
-```
-
-2. Open `client/src/pages/EPK.tsx`
-
-3. Find the `pressPhotos` array and add:
-```javascript
-{ url: googleDriveImages.pressPhoto18, name: 'DCSS_Press_Photo_18.jpg' },
-```
-
-### Removing EPK Photos
-To remove a photo from the EPK gallery:
-
-1. Delete the line from the `pressPhotos` array in `EPK.tsx`
-2. Optionally remove the unused URL from `images.ts`
+Then use the Git tab in Replit to push your changes to GitHub. Porkbun will automatically update the live site within a minute.
 
 ---
 
-## Step 3: Build the Website
+## Quick Reference: What Each Image Controls
 
-1. Open the **Shell** tab in Replit (bottom panel)
-
-2. Run the build command:
-```
-npm run build
-```
-
-3. Copy the built files to the root:
-```
-cp dist/public/index.html index.html && cp -r dist/public/assets/* assets/
-```
-
----
-
-## Step 4: Push to GitHub (Deploy)
-
-### Using the Git Tab (Recommended)
-1. Click the **Git** tab in the left sidebar
-2. Review your changes
-3. Click **Commit** and add a message like "Update images"
-4. Click **Push**
-
-### Using Shell Commands (Alternative)
-```
-git add index.html assets/ client/src/lib/images.ts
-git commit -m "Update images"
-git push origin main
-```
-
----
-
-## Step 5: Verify the Changes
-
-1. Wait about 1 minute for Porkbun to update
-2. Go to your website: **dcssbluegrass.com**
-3. Do a **hard refresh**:
-   - Windows: Ctrl + Shift + R
-   - Mac: Cmd + Shift + R
-4. Check that the new images appear correctly
-
----
-
-## Quick Reference: Image Locations
-
-| Image | File | What It Affects |
-|-------|------|-----------------|
-| `heroBackground` | images.ts | Homepage main background |
-| `highlightsImage` | images.ts | Homepage "Festival Tested" section |
-| `aboutBandPhoto` | images.ts | About page band photo |
-| `contactBandPhoto` | images.ts | Contact page band photo |
-| `logoText` | images.ts | Footer logo |
-| `pressPhoto1-17` | images.ts + EPK.tsx | EPK gallery and ZIP download |
-| `logo1-4` | images.ts + EPK.tsx | EPK logo ZIP download |
+| Image Name | Where It Appears |
+|------------|------------------|
+| Hero background | Large background on homepage |
+| Highlights/Festival image | "Festival Tested" section on homepage |
+| About band photo | Main photo on About page |
+| Contact band photo | Main photo on Contact page |
+| Footer logo | Logo in the website footer |
+| EPK press photos | Photo gallery on EPK page + downloadable ZIP |
+| EPK logos | Downloadable logos ZIP on EPK page |
 
 ---
 
 ## Troubleshooting
 
 ### Image Not Showing
-- Make sure the Google Drive sharing is set to "Anyone with the link"
-- Check that you copied the correct File ID
-- Try a hard refresh in your browser
+- Make sure Google Drive sharing is set to "Anyone with the link"
+- Ask the Agent to check the image link is formatted correctly
 
-### Changes Not Appearing on Live Site
-- Make sure you ran `npm run build`
-- Make sure you copied the files to the root folder
-- Make sure you pushed to GitHub
-- Wait a minute and do a hard refresh
-
-### Git Push Errors
-- Use the Git tab in Replit (it handles authentication automatically)
-- Make sure you committed your changes before pushing
+### Changes Not on Live Site
+- Make sure you pushed to GitHub using the Git tab
+- Wait about 1 minute for Porkbun to update
+- Do a hard refresh in your browser (Ctrl+Shift+R or Cmd+Shift+R)
 
 ---
 
-## Need Help?
+## Example Prompt
 
-Contact your web developer or refer to this document for step-by-step guidance.
+Here's a complete example of updating multiple images:
+
+```
+Please update these website images:
+
+1. Homepage hero background:
+https://drive.google.com/file/d/1ABCxyz123/view?usp=sharing
+
+2. About page band photo:
+https://drive.google.com/file/d/1DEFabc456/view?usp=sharing
+
+3. Add these new EPK press photos to the gallery:
+https://drive.google.com/file/d/1GHIjkl789/view?usp=sharing
+https://drive.google.com/file/d/1MNOpqr012/view?usp=sharing
+
+Then build the site for deployment.
+```
+
+The Agent will handle extracting the file IDs, updating the code, and building the site.
