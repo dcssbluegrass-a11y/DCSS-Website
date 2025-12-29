@@ -6,7 +6,23 @@ This is a band website for Deer Creek Sharp Shooters (DCSS), a Colorado bluegras
 
 Preferred communication style: Simple, everyday language.
 
-# Recent Changes (August 2025)
+# Recent Changes (December 2025)
+
+## Image Updates
+- **Reorganized Google Drive images**: Updated all image references to new Google Drive folder
+- **Homepage**: New hero background and "Festival Tested" section image
+- **About page**: New band photo
+- **Contact page**: New band photo
+- **EPK page**: 17 press photos in gallery and downloadable ZIP, 4 logos in downloadable ZIP
+
+## Documentation
+- **Image Update Instructions**: Created `docs/Image-Update-Instructions.md` with step-by-step guide for updating website images
+
+## Deployment
+- **Hash-based routing**: Using Wouter's `useHashLocation` for SPA compatibility on Porkbun static hosting
+- **Deployment process**: Build with `npm run build`, copy dist/public/* to root, push to GitHub for Porkbun auto-deployment
+
+# Previous Changes (August 2025)
 
 ## Color Scheme Update
 - **Complete White Replacement**: All white text throughout the website has been replaced with warm cream color (#FFEAD1)
