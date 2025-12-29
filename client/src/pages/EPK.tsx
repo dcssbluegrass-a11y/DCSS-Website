@@ -16,7 +16,18 @@ export default function EPK() {
     { url: googleDriveImages.pressPhoto3, name: 'DCSS_Press_Photo_3.jpg' },
     { url: googleDriveImages.pressPhoto4, name: 'DCSS_Press_Photo_4.jpg' },
     { url: googleDriveImages.pressPhoto5, name: 'DCSS_Press_Photo_5.jpg' },
-    { url: googleDriveImages.pressPhoto6, name: 'DCSS_Press_Photo_6.jpg' }
+    { url: googleDriveImages.pressPhoto6, name: 'DCSS_Press_Photo_6.jpg' },
+    { url: googleDriveImages.pressPhoto7, name: 'DCSS_Press_Photo_7.jpg' },
+    { url: googleDriveImages.pressPhoto8, name: 'DCSS_Press_Photo_8.jpg' },
+    { url: googleDriveImages.pressPhoto9, name: 'DCSS_Press_Photo_9.jpg' },
+    { url: googleDriveImages.pressPhoto10, name: 'DCSS_Press_Photo_10.jpg' },
+    { url: googleDriveImages.pressPhoto11, name: 'DCSS_Press_Photo_11.jpg' },
+    { url: googleDriveImages.pressPhoto12, name: 'DCSS_Press_Photo_12.jpg' },
+    { url: googleDriveImages.pressPhoto13, name: 'DCSS_Press_Photo_13.jpg' },
+    { url: googleDriveImages.pressPhoto14, name: 'DCSS_Press_Photo_14.jpg' },
+    { url: googleDriveImages.pressPhoto15, name: 'DCSS_Press_Photo_15.jpg' },
+    { url: googleDriveImages.pressPhoto16, name: 'DCSS_Press_Photo_16.jpg' },
+    { url: googleDriveImages.pressPhoto17, name: 'DCSS_Press_Photo_17.jpg' }
   ];
 
   const nextImage = () => {
@@ -65,40 +76,6 @@ export default function EPK() {
     }
   };
 
-  const handleDownloadLogos = async () => {
-    console.log('Downloading logos');
-    const zip = new JSZip();
-    const logosFolder = zip.folder("DCSS_Logos");
-    
-    const logos = [
-      { url: googleDriveImages.logo1, name: 'DCSS_Logo_1.jpg' },
-      { url: googleDriveImages.logo2, name: 'DCSS_Logo_2.png' },
-      { url: googleDriveImages.logo3, name: 'DCSS_Logo_3.png' },
-      { url: googleDriveImages.logo4, name: 'DCSS_Logo_4.jpg' },
-      { url: googleDriveImages.logo5, name: 'DCSS_Logo_5.jpg' }
-    ];
-    
-    try {
-      // Add each logo to the zip folder
-      for (const logo of logos) {
-        const blob = await downloadAsBlob(logo.url);
-        logosFolder?.file(logo.name, blob);
-      }
-      
-      // Generate and download the zip file
-      const zipBlob = await zip.generateAsync({ type: 'blob' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(zipBlob);
-      link.download = 'DCSS_Logos.zip';
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(link.href);
-    } catch (error) {
-      console.error('Error creating logos zip:', error);
-    }
-  };
 
   return (
     <div className="pt-16 min-h-screen bg-dcss-light">
@@ -113,7 +90,7 @@ export default function EPK() {
             </p>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+          <div className="grid gap-8 md:grid-cols-2 mb-12">
             {/* Stage Plot Card */}
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
               <div className="flex items-center justify-between mb-4">
@@ -163,27 +140,6 @@ export default function EPK() {
               </Button>
             </div>
 
-            {/* Logo Assets Card */}
-            <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-heading font-bold text-dcss-dark">Logo Assets</h3>
-                <div className="p-2 bg-dcss-orange/10 rounded-lg">
-                  <svg className="w-6 h-6 text-dcss-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2h4a1 1 0 011 1v1a1 1 0 01-1 1v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7a1 1 0 01-1-1V5a1 1 0 011-1h4zM9 3v1h6V3H9z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4">DCSS logos and branding materials in various formats</p>
-              <Button 
-                onClick={handleDownloadLogos}
-                className="w-full bg-dcss-dark hover:bg-gray-800 text-white"
-              >
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Logos (ZIP)
-              </Button>
-            </div>
           </div>
 
           {/* Band Information */}
