@@ -9,6 +9,12 @@ export const googleDriveImages = {
   contactBandPhoto: "https://lh3.googleusercontent.com/d/1sqIFaK7QAegxcsfydU6x06nPsdMtjZNW", // Contact page photo
   highlightsImage: "https://lh3.googleusercontent.com/d/1yOld6oxIat9XsB4tj0XV7CieGI6qagM-", // Festival tested image (Homepage)
   
+  // EPK Logos (4 files)
+  logo1: "https://lh3.googleusercontent.com/d/17yl_gmW12AzuuFVqZxjCcZhTqBGQJLgH",
+  logo2: "https://lh3.googleusercontent.com/d/1MqWK3rcY1BKN295EnrQsC_SoD34i2P8x",
+  logo3: "https://lh3.googleusercontent.com/d/1iLeFWpeEESvMwkrf0Y0bTNq23Q9R96rV",
+  logo4: "https://lh3.googleusercontent.com/d/1eZ8j2Hs53ByuzqTN8tQtVK-nAJLewXBG",
+  
   // EPK Press Photos (17 files)
   pressPhoto1: "https://lh3.googleusercontent.com/d/1V_IL7g2xt-JXItCHGNmh9PgYkIx_IKLh",
   pressPhoto2: "https://lh3.googleusercontent.com/d/1bM52jrDe-8ZZ-QEfAH4Jek7tkCBq4IE2",
