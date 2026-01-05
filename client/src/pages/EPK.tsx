@@ -136,10 +136,7 @@ export default function EPK() {
               <p className="text-gray-600 mb-4">Technical requirements and stage setup for DCSS performances</p>
               <Button 
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/DCSS_Stage_Plot_Input_List.pdf';
-                  link.download = 'DCSS_Stage_Plot_Input_List.pdf';
-                  link.click();
+                  window.open('https://drive.google.com/uc?export=download&id=1YlcGW0Rir3dri5Xb7m4FAet_Zl4xnXgm', '_blank');
                 }}
                 className="w-full bg-dcss-dark hover:bg-gray-800 text-white"
               >
