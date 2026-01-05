@@ -206,7 +206,7 @@ export default function EPK() {
                   <li><strong>Genre:</strong> Bluegrass, Americana</li>
                   <li><strong>Location:</strong> Colorado, USA</li>
                   <li><strong>Formed:</strong> 2012</li>
-                  <li><strong>Members:</strong> 6</li>
+                  <li><strong>Members:</strong> 5</li>
                   <li><strong>Latest Release:</strong> "Crik" (2023)</li>
                 </ul>
               </div>
