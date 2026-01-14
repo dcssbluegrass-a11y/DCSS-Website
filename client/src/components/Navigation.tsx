@@ -11,7 +11,7 @@ export default function Navigation() {
     { name: "Shows", href: "/shows" },
     { name: "About", href: "/about" },
     { name: "Music", href: "/music" },
-    { name: "Videos", href: "/videos" },
+    { name: "Videos", href: "https://youtube.com/playlist?list=PLm_wtERb-bwySj7byt4pIVDLJJ3-5Wtnx", external: true },
     { name: "EPK", href: "/epk" },
     { name: "Contact", href: "/contact" },
   ];
@@ -31,17 +31,29 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`font-heading font-medium transition-colors duration-200 ${
-                    location === item.href
-                      ? "text-dcss-orange"
-                      : "text-dcss-light hover:text-dcss-orange"
-                  }`}
-                >
-                  {item.name}
-                </Link>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-heading font-medium transition-colors duration-200 text-dcss-light hover:text-dcss-orange"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`font-heading font-medium transition-colors duration-200 ${
+                      location === item.href
+                        ? "text-dcss-orange"
+                        : "text-dcss-light hover:text-dcss-orange"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
           </div>
@@ -63,18 +75,31 @@ export default function Navigation() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dcss-dark">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block px-3 py-2 font-heading transition-colors duration-200 ${
-                  location === item.href
-                    ? "text-dcss-orange"
-                    : "text-dcss-light hover:text-dcss-orange"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 font-heading transition-colors duration-200 text-dcss-light hover:text-dcss-orange"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-3 py-2 font-heading transition-colors duration-200 ${
+                    location === item.href
+                      ? "text-dcss-orange"
+                      : "text-dcss-light hover:text-dcss-orange"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </div>
         </div>
